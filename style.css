@@ -97,6 +97,7 @@ a {
 
 /* Hero Section */
 .hero-section {
+    background: url('images/law-background.jpg') no-repeat center center/cover
     background: #000000 url('images/law-background.jpg') no-repeat center center/cover; /* تصویر پس‌زمینه. مطمئن شوید عکس law-background.jpg در پوشه images وجود دارد. */
     color: #fff;
     text-align: center;
@@ -292,3 +293,4 @@ a {
         font-size: 1.8em;
     }
 }
+
