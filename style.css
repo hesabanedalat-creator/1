@@ -1,88 +1,49 @@
-css_content = """
-/*
- * استایل‌های عمومی (به عنوان مثال: فونت‌ها، تنظیمات پایه)
- */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/*
- * بخش هیرو (Hero Section) - اصلاح شده
- */
 .hero-section {
-    position: relative; /* برای قرارگیری شبه‌عنصر ::before */
-    height: 80vh; /* ارتفاع پیشنهادی */
+    position: relative;
+    height: 100vh; /* Full viewport height */
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    color: white; /* Text color for readability */
     text-align: center;
-    color: white;
-    background: url('images/law-background.jpg') no-repeat center center/cover;
+    overflow: hidden; /* Ensure pseudo-element does not overflow */
 }
 
-/* لایه تیره (Overlay) برای بهبود خوانایی متن روی تصویر */
 .hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* تیره کننده 60 درصد */
+    width: 100%;
+    height: 100%;
+    background: url('images/law-background.jpg') no-repeat center center/cover;
+    filter: brightness(60%); /* Apply a darker overlay for text readability */
+    z-index: -1; /* Place behind content */
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above the pseudo-element */
     z-index: 1;
+    padding: 20px;
 }
 
-.hero-section .container {
-    position: relative; /* محتوای اصلی را بالای لایه تیره بیاورد */
-    z-index: 2;
-}
-
-.hero-section h1 {
-    font-size: 3.5em;
+.hero-content h1 {
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
-.hero-section p {
-    font-size: 1.5em;
-    max-width: 700px;
-    margin: 0 auto;
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
-/*
- * سایر استایل‌ها (مثال)
- */
-.about-section {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-}
-
-.about-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/*
- * فوتر (Footer)
- */
-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-"""
-
-file_path = "/mnt/data/style.css"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(css_content)
-
-print(f"فایل style.css جدید با موفقیت نوشته شد در: {file_path}")
+.btn {
+    display: inline-block;
+    background
