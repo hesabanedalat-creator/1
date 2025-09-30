@@ -1,294 +1,88 @@
-/* تنظیمات پایه */
+css_content = """
+/*
+ * استایل‌های عمومی (به عنوان مثال: فونت‌ها، تنظیمات پایه)
+ */
 body {
-    direction: rtl; /* برای راست‌چین کردن متن */
-    font-family: Arial, sans-serif; /* فونت پیش‌فرض */
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
-
-/* برای فارسی‌سازی بهتر، اگر فونت فارسی اضافه کردید، اینجا اضافه کنید */
-/* @font-face {
-    font-family: 'Nastaligh';
-    src: url('fonts/Nastaligh.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} */
 
 .container {
     width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.btn {
-    display: inline-block;
-    color: #fff;
-    background-color: #007bff; /* آبی برای دکمه‌ها */
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Header */
-.main-header {
-    background-color: #2c3e50; /* رنگ سرمه‌ای تیره */
-    color: #fff;
-    padding: 1rem 0;
-    border-bottom: 3px solid #f0e68c; /* خط طلایی پایین هدر */
-}
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* برای واکنش‌گرا بودن */
-}
-
-.company-name-highlight {
-    font-family: 'Nastaligh', 'Arial', sans-serif; /* اگر فونت نستعلیق رو اضافه کردید، اولویت با اونه */
-    color: #f0e68c; /* رنگ طلایی برجسته */
-    margin: 0;
-    font-size: 2.2em;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* سایه برای برجستگی */
-}
-
-.company-slogan {
-    color: #a7b7c8; /* رنگ خاکستری روشن برای شعار */
-    font-size: 1.1em;
-    margin: 5px 0 0;
-    padding-right: 10px; /* فاصله از اسم شرکت */
-}
-
-.main-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex; /* آیتم‌های منو در یک خط */
-}
-
-.main-nav ul li {
-    margin-right: 20px;
-}
-
-.main-nav ul li a {
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.main-nav ul li a:hover {
-    color: #f0e68c; /* طلایی هنگام هاور */
-}
-
-/* Hero Section - **این بخش اصلاح شده است** */
+/*
+ * بخش هیرو (Hero Section) - اصلاح شده
+ */
 .hero-section {
-    background: url('images/law-background.jpg') no-repeat center center/cover; /* تصویر پس‌زمینه تنظیم شد */
-    color: #fff;
+    position: relative; /* برای قرارگیری شبه‌عنصر ::before */
+    height: 80vh; /* ارتفاع پیشنهادی */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 0;
-    position: relative;
+    color: white;
+    background: url('images/law-background.jpg') no-repeat center center/cover;
 }
 
-.hero-section::before { /* یک لایه تیره روی عکس برای خوانایی متن */
+/* لایه تیره (Overlay) برای بهبود خوانایی متن روی تصویر */
+.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* تیرگی 60% */
-}
-
-.hero-section .container {
-    position: relative; /* برای اینکه محتوا بالای لایه تیره باشه */
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* تیره کننده 60 درصد */
     z-index: 1;
 }
 
-.hero-section h2 {
-    font-size: 3em;
+.hero-section .container {
+    position: relative; /* محتوای اصلی را بالای لایه تیره بیاورد */
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    font-size: 1.5em;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* Services Section */
-.services-section {
-    padding: 40px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.services-section h3 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #2c3e50;
-}
-
-.service-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px; /* فاصله بین کارت‌ها */
-}
-
-.service-cards .card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 30px;
-    width: 250px; /* عرض هر کارت */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.service-cards .card:hover {
-    transform: translateY(-5px); /* افکت کوچک بالا آمدن در هاور */
-}
-
-.service-cards .card h4 {
-    color: #007bff;
-    margin-top: 15px;
-    font-size: 1.3em;
-}
-
-.service-cards .card p {
-    font-size: 0.95em;
-    color: #555;
-}
-
-.icon-large {
-    font-size: 3em; /* اندازه بزرگتر آیکون اصلی کارت */
-    color: #f0e68c; /* رنگ طلایی برای آیکون‌های اصلی */
-}
-
-.card h4 i {
-    color: #007bff; /* رنگ آبی برای آیکون‌های کوچک در عنوان کارت */
-    margin-left: 10px;
-}
-
-/* About Section */
+/*
+ * سایر استایل‌ها (مثال)
+ */
 .about-section {
-    padding: 40px 0;
-    background-color: #f4f4f4;
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.about-section h2 {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-.about-section h3 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 40px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.contact-section h3 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
-
-.contact-section p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.contact-section p i {
-    color: #007bff;
-    margin-left: 10px;
-}
-
-.contact-form {
-    max-width: 500px;
-    margin: 30px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box; /* برای جلوگیری از بزرگ شدن فرم */
-}
-
-.contact-form textarea {
-    resize: vertical; /* فقط اجازه تغییر ارتفاع */
-}
-
-.contact-form button {
-    background-color: #28a745; /* سبز برای دکمه ارسال */
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #218838;
-}
-
-/* Footer */
-.main-footer {
-    background-color: #2c3e50; /* رنگ سرمه‌ای تیره */
-    color: #fff;
+/*
+ * فوتر (Footer)
+ */
+footer {
+    background-color: #343a40;
+    color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 30px;
 }
+"""
 
-/* واکنش‌گرا کردن (Responsive design) */
-@media (max-width: 768px) {
-    .main-header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .main-nav ul {
-        flex-direction: column;
-        margin-top: 15px;
-    }
-    .main-nav ul li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .service-cards .card {
-        width: 80%; /* کارت‌ها در موبایل عرض بیشتری بگیرند */
-    }
-    .hero-section h2 {
-        font-size: 2.2em;
-    }
-    .company-name-highlight {
-        font-size: 1.8em;
-    }
-}
+file_path = "/mnt/data/style.css"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(css_content)
+
+print(f"فایل style.css جدید با موفقیت نوشته شد در: {file_path}")
