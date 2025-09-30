@@ -95,10 +95,9 @@ a {
     color: #f0e68c; /* طلایی هنگام هاور */
 }
 
-/* Hero Section */
+/* Hero Section - **این بخش اصلاح شده است** */
 .hero-section {
-    background: url('images/law-background.jpg') no-repeat center center/cover
-    background: #000000 url('images/law-background.jpg') no-repeat center center/cover; /* تصویر پس‌زمینه. مطمئن شوید عکس law-background.jpg در پوشه images وجود دارد. */
+    background: url('images/law-background.jpg') no-repeat center center/cover; /* تصویر پس‌زمینه تنظیم شد */
     color: #fff;
     text-align: center;
     padding: 100px 0;
@@ -293,4 +292,3 @@ a {
         font-size: 1.8em;
     }
 }
-
