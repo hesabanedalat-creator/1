@@ -1,297 +1,400 @@
-/* ===================================== */
-/* === استایل‌های جدید: new_style.css === */
-/* ===================================== */
-
-/* 1. استایل عنوان شرکت (چلینیوم/طلایی) */
-.company-title {
-    font-size: 2.2em;
-    font-weight: bold;
-    text-shadow: 
-        0 0 5px rgba(255, 215, 0, 0.7), /* درخشش داخلی */
-        0 0 10px rgba(255, 215, 0, 0.5); /* درخشش خارجی */
-    line-height: 1.3;
-}
-
-.gold-text {
-    color: #FFD700; /* رنگ طلایی استاندارد */
-    font-style: italic;
-    /* ایجاد جلوه سه‌بعدی با سایه متن */
-    text-shadow: 1px 1px 2px #a0522d, 
-                 -1px -1px 2px #a0522d,
-                 0 0 15px rgba(255, 215, 0, 0.8);
-}
-
-.slogan {
-    font-size: 0.9em;
-    color: #aaa;
-    margin-top: 5px;
-}
-
-/* 2. استایل منوی همبرگری (Hamburger Menu) */
-.hamburger-menu {
-    display: none; /* در دسکتاپ پنهان است */
-    cursor: pointer;
-    position: relative;
-    z-index: 1000;
-}
-
-.menu-icon {
-    width: 30px;
-    height: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.menu-icon span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: #333; /* یا رنگی متناسب با هدر شما */
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
+/* ===================================================== */
+/* 1. عمومی و Reset (برای اطمینان از عدم تداخل احتمالی) */
+/* ===================================================== */
+/* اگر فونت خاصی استفاده می‌کنید، آن را در اینجا تعریف کنید */
+body {
+    font-family: Tahoma, sans-serif; /* فونت پیش فرض - فونت اصلی خود را جایگزین کنید */
     margin: 0;
-    display: flex; /* در دسکتاپ نمایش افقی */
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    display: block;
-}
-
-/* استایل دراپ‌داون خدمات */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0; /* از راست باز شود */
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
-    border-radius: 5px;
-    padding: 5px 0;
-}
-
-.dropdown-content li a {
-    color: #333;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
+    padding: 0;
+    background-color: #f4f4f4;
+    direction: rtl; /* تنظیم جهت راست به چپ برای فارسی */
     text-align: right;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* استایل‌دهی آیکون‌های داخل دراپ‌داون برای جذابیت بیشتر */
-.dropdown-content a i {
-    margin-left: 8px;
-    color: #0056b3;
-}
-
-
-/* Responsive برای منوی همبرگری */
-@media (max-width: 992px) {
-    .hamburger-menu {
-        display: block; /* نمایش آیکون در موبایل */
-    }
-    
-    .nav-links {
-        display: none; /* پنهان کردن منو در حالت موبایل */
-        flex-direction: column;
-        position: absolute;
-        top: 100%; /* زیر هدر قرار گیرد */
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        z-index: 900;
-        padding-top: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex; /* نمایش منو هنگام کلیک */
-    }
-
-    .nav-links li {
-        border-bottom: 1px solid #eee;
-    }
-
-    /* باز شدن دراپ‌داون در موبایل (به جای افقی، عمودی) */
-    .dropdown-content {
-        position: static; /* از حالت مطلق خارج شود */
-        width: 100%;
-        box-shadow: none;
-        background-color: #f0f0f0;
-        border-radius: 0;
-    }
-    
-    .dropdown-content li a {
-        padding-left: 30px; /* تورفتگی بیشتر برای منوی خدمات */
-    }
-    
-    /* تنظیم نمایش لوگو و عنوان در موبایل */
-    .main-header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .logo-area {
-        width: auto; /* اجازه می دهد اندازه بر اساس محتوا باشد */
-    }
-    
-    .company-title {
-        font-size: 1.5em; /* کوچک شدن فونت عنوان در موبایل */
-    }
-}
-
-/* 3. استایل اسکرول خبر (News Ticker) */
-.news-ticker-container {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-    overflow: hidden; /* مهم برای افکت اسکرول */
-    margin-bottom: 20px;
-}
-
-.ticker-label {
-    padding: 0 15px;
-    font-weight: bold;
-    color: #d9534f; /* رنگ متمایز برای برچسب */
-    flex-shrink: 0; /* جلوگیری از کوچک شدن برچسب */
-}
-
-.news-ticker {
-    white-space: nowrap;
-    animation: ticker-scroll 30s linear infinite; /* زمان و نوع انیمیشن */
-    padding-right: 100%; /* شروع از خارج از دید */
-}
-
-.ticker-item {
-    display: inline-block;
-    padding: 0 30px;
-    color: #555;
-}
-
-@keyframes ticker-scroll {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); } /* حرکت به سمت چپ */
-}
-
-/* 4. استایل‌های عمومی (برای تکمیل) */
-.main-header {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-}
-
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-.hero-section {
-    text-align: center;
-    padding: 60px 20px;
-    background: url('your_background_image_url.jpg') no-repeat center center/cover; /* اینجا URL عکس بکگراند خود را قرار دهید */
-    color: white;
-    text-shadow: 1px 1px 3px black;
-    border-radius: 8px;
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
-.featured-services h3 {
-    text-align: center;
-    margin-top: 40px;
+/* ===================================================== */
+/* 2. استایل عنوان شرکت (جلوه چلینیوم/طلایی) */
+/* ===================================================== */
+.logo-area {
+    text-align: right;
 }
 
-.service-grid {
+.company-title {
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    /* جلوه طلایی: استفاده از گرادینت برای شبیه سازی فلز */
+    background: linear-gradient(180deg, #FFD700, #B8860B, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* fallback color */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.slogan {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: -10px;
+}
+
+/* ===================================================== */
+/* 3. استایل منوی اصلی و همبرگری (Responsive Menu) */
+/* ===================================================== */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Dropdown Menu --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none; /* مخفی در حالت عادی */
+    position: absolute;
+    top: 100%; /* زیر آیتم اصلی */
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    padding: 10px 0;
+    list-style: none;
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    text-align: right;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+    color: #0056b3;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* نمایش هنگام هاور */
+}
+
+/* --- Main Nav Links --- */
+.main-nav {
+    flex-grow: 1;
+    text-align: left; /* چیدمان آیتم های منو به چپ برای راست به چپ */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* آیتم ها از سمت راست شروع شوند */
+}
+
+.nav-links > li {
+    padding: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #333;
+    padding: 10px 5px;
+    display: block;
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+}
+
+/* --- Hamburger Button (Mobile/Tablet View) --- */
+.hamburger-menu {
+    display: none; /* مخفی در دسکتاپ */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1002;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* حالت فعال منو (بعد از کلیک جاوااسکریپت) */
+.main-nav.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+.main-nav.active .nav-links > li {
+    padding: 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===================================================== */
+/* 4. استایل News Ticker (اسکرول افقی) */
+/* ===================================================== */
+.news-ticker-wrapper {
+    background-color: #e9ecef;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.news-ticker {
+    display: flex;
+    align-items: center;
+}
+
+.ticker-label {
+    font-weight: bold;
+    padding-left: 15px;
+    white-space: nowrap;
+    color: #c82333;
+}
+
+.ticker-content {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: ticker-scroll 30s linear infinite; /* 30 ثانیه برای یک دور کامل */
+}
+
+.ticker-content span {
+    padding-right: 40px; /* فاصله بین آیتم ها */
+    display: inline-block;
+    min-width: 100%; /* اطمینان از اینکه همه آیتم ها در یک ردیف جا می شوند */
+}
+
+/* تعریف انیمیشن اسکرول */
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% - 40px)); } /* حرکت به چپ (منفی) */
+}
+
+/* ===================================================== */
+/* 5. استایل بخش خدمات کلیدی (افقی با هاور رنگی) */
+/* ===================================================== */
+.key-services-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.horizontal-scroll-services {
+    display: flex;
+    overflow-x: auto; /* فعال کردن اسکرول افقی در صورت زیاد بودن آیتم ها */
+    padding: 20px 0;
+    gap: 15px; /* فاصله بین آیتم ها */
+    justify-content: flex-start; /* چیدمان از سمت راست */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
     margin-top: 20px;
 }
 
-.service-box {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    width: 22%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    color: #333;
-    text-decoration: none;
-    border-radius: 6px;
-}
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
-.icon-large {
-    font-size: 2.5em;
+.service-item {
+    flex: 0 0 auto; /* آیتم ها نباید منقبض شوند */
+    min-width: 150px; /* حداقل عرض برای هر آیتم */
+    padding: 15px 20px;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    background-color: #f8f9fa;
     color: #0056b3;
-    margin-bottom: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
 
-/* استایل فوتر */
-.main-footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    padding: 40px 0 20px 0;
-    margin-top: 40px;
+.service-item:hover {
+    background-color: #0056b3; /* رنگ پس زمینه در هاور */
+    color: #ffffff; /* رنگ متن در هاور */
+    transform: translateY(-3px); /* حرکت کمی به بالا */
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
 }
+
+
+/* ===================================================== */
+/* 6. استایل فوتر و شبکه‌های اجتماعی */
+/* ===================================================== */
+.main-footer {
+    background-color: #333;
+    color: #ddd;
+    padding: 40px 0 10px 0;
+    margin-top: 30px;
+}
+
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #3a5066;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #555;
 }
-.footer-info, .footer-links, .social-media {
+
+.footer-links, .contact-info, .social-icons {
     width: 30%;
-    min-width: 250px;
+    min-width: 200px;
     margin-bottom: 20px;
 }
+
+.footer-links h4, .contact-info h4, .social-icons h4 {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
 .footer-links ul {
     list-style: none;
     padding: 0;
 }
+
 .footer-links a {
-    color: #bdc3c7;
-    text-decoration: none;
     display: block;
     padding: 5px 0;
+    color: #ccc;
 }
+
+.footer-links a:hover {
+    color: #fff;
+}
+
 .social-icons a {
     font-size: 1.8em;
-    margin-left: 15px;
-    color: #ecf0f1;
-    transition: color 0.3s;
+    margin-left: 15px; /* فاصله بین آیکون ها */
+    display: inline-block;
+    color: #ccc;
+    transition: color 0.3s ease;
 }
+
 .social-icons a:hover {
-    color: #3498db;
+    color: #FFD700;
 }
+
 .copyright {
     text-align: center;
     padding-top: 10px;
     font-size: 0.85em;
-    color: #7f8c8d;
+    color: #888;
+}
+
+/* ===================================================== */
+/* 7. Media Queries (برای واکنش‌گرایی منو) */
+/* ===================================================== */
+@media (max-width: 992px) {
+    /* منوی دسکتاپ مخفی، منوی همبرگری ظاهر شود */
+    .main-nav {
+        display: block;
+        width: 100%;
+        order: 3; /* قرار دادن منو زیر لوگو و دکمه همبرگر */
+    }
+    
+    .nav-links {
+        display: none; /* پنهان کردن لینک‌ها در حالت پیش‌فرض موبایل */
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+    }
+    
+    .hamburger-menu {
+        display: block; /* نمایش دکمه همبرگر */
+    }
+
+    .dropdown-menu {
+        position: static; /* منو دراپ داون باید در حالت موبایل زیر آیتم والد بیاید */
+        min-width: 100%;
+        box-shadow: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none; /* برای اطمینان از اینکه فقط با کلیک باز شود */
+    }
+
+    /* نمایش منو پس از فعال شدن کلاس 'active' توسط جاوااسکریپت */
+    .main-nav.active .nav-links {
+        display: flex;
+    }
+
+    /* تنظیمات چیدمان هدر برای موبایل */
+    .header-content {
+        flex-wrap: wrap;
+    }
+    .logo-area {
+        width: 80%;
+    }
+    .hamburger-menu {
+        width: 20%;
+    }
+}
+
+@media (max-width: 576px) {
+    .company-title {
+        font-size: 1.5em;
+    }
+    
+    .key-services-section .horizontal-scroll-services {
+        justify-content: flex-start; /* اطمینان از اسکرول پذیری */
+    }
+    
+    .service-item {
+        min-width: 120px;
+        padding: 10px 15px;
+    }
+
+    .footer-content > div {
+        width: 100%;
+    }
 }
