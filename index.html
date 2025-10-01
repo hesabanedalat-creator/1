@@ -4,40 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موسسه حقوقی و مالی عدالت حسابان</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Font Awesome icons */
-        .icon {
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: #3498db; /* Default icon color */
-            margin-left: 8px;
-        }
-
-        /* Specific icon styles */
-        .icon.scale::before { content: "\f24e"; } /* Scale icon */
-        .icon.gavel::before { content: "\f0e3"; } /* Gavel icon */
-        .icon.heart-broken::before { content: "\f7a2"; } /* Heart broken icon */
-        .icon.building-2::before { content: "\f1ad"; } /* Building icon */
-        .icon.handshake::before { content: "\f500"; } /* Handshake icon */
-        .icon.factory::before { content: "\f1ae"; } /* Factory icon */
-        .icon.receipt-tax::before { content: "\f573"; } /* Tax receipt icon */
-        .icon.users::before { content: "\f0c0"; } /* Users icon */
-        .icon.user-check::before { content: "\f501"; } /* User check icon */
-        .icon.stethoscope::before { content: "\f67b"; } /* Stethoscope icon */
-        .icon.shield-check::before { content: "\f17c"; } /* Shield check icon */
-        .icon.hard-hat::before { content: "\f197"; } /* Hard hat icon */
-        .icon.instagram::before { content: "\f16d"; } /* Instagram icon */
-        .icon.whatsapp::before { content: "\f232"; } /* WhatsApp icon */
-        .icon.bale::before { content: "\f700"; } /* Bale icon (example, you might need a custom SVG or different icon) */
-        .icon.phone::before { content: "\f095"; } /* Phone icon */
-        .icon.map-marker-alt::before { content: "\f3c5"; } /* Map marker alt icon */
-
-        /* Hover effect for icons */
-        .service-item:hover .icon {
-            color: #2c3e50; /* Darker color on hover */
-        }
-
+        /* --------------------------------
+           فونت و استایل‌های عمومی
+           -------------------------------- */
         body {
             font-family: 'Tahoma', sans-serif;
             margin: 0;
@@ -46,34 +18,46 @@
             color: #333;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .icon {
+            margin-left: 8px;
+            color: #3498db; /* رنگ پیش‌فرض آیکون */
+            font-style: normal; /* اطمینان از ظاهر فونت آیکون */
+        }
+
+        /* --------------------------------
+           هدر (Header) و نویگیشن (Navbar)
+           -------------------------------- */
         .header {
             background-color: #2c3e50;
             color: #fff;
-            padding: 15px 0;
+            padding: 10px 20px;
             text-align: center;
             position: relative;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 1.8em;
         }
 
+        .header .contact-info-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
         .header .contact-info {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
             font-size: 0.9em;
-        }
-
-        .header .contact-info .phone {
-            margin-left: 15px;
         }
 
         .header .slogan {
-            font-size: 0.9em;
-            margin-top: 5px;
+            font-size: 0.85em;
             font-style: italic;
         }
 
@@ -83,18 +67,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 0;
-            position: relative; /* Needed for absolute positioning of hamburger */
+            padding: 0;
+            position: relative;
         }
 
         .navbar .hamburger {
-            display: none; /* Hidden by default, shown on smaller screens */
+            display: none; 
             cursor: pointer;
-            padding: 10px;
+            padding: 15px;
             position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+            right: 0;
+            top: 0;
         }
 
         .navbar .hamburger .line {
@@ -108,29 +91,32 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Changed to flex for horizontal layout */
+            display: flex; 
         }
 
         .navbar li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
             font-size: 1.1em;
-            padding: 8px 12px;
+            padding: 15px 10px;
+            display: block;
             transition: background-color 0.3s ease;
-            border-radius: 4px;
         }
 
         .navbar a:hover {
             background-color: #1abc9c;
         }
-
+        
+        /* --------------------------------
+           بخش قهرمان (Hero Section)
+           -------------------------------- */
         .hero {
-            background: url('images/law-background.jpg') no-repeat center center/cover; /* Assuming law-background.jpg is in an 'images' folder */
-            height: 500px;
+            background: url('law-background.jpg') no-repeat center center/cover; /* فرض بر وجود تصویر */
+            height: 450px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -146,7 +132,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            background-color: rgba(0, 0, 0, 0.6); 
         }
 
         .hero-content {
@@ -155,191 +141,294 @@
         }
 
         .hero-content h2 {
-            font-size: 3em;
+            font-size: 3.2em;
             margin-bottom: 10px;
         }
 
         .hero-content p {
             font-size: 1.5em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .hero-content .cta-button {
-            background-color: #1abc9c;
+        .cta-button {
+            background-color: #e74c3c; /* رنگ قرمز برای فراخوان اقدام */
             color: white;
-            padding: 12px 25px;
-            text-decoration: none;
+            padding: 12px 30px;
             font-size: 1.2em;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            display: inline-block;
         }
 
-        .hero-content .cta-button:hover {
-            background-color: #16a085;
+        .cta-button:hover {
+            background-color: #c0392b;
         }
 
+        /* --------------------------------
+           بخش خدمات (Services) - اصلاح شده برای افقی اسکرول
+           -------------------------------- */
         .services {
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
             background-color: #fff;
         }
 
         .services h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+            font-size: 2.3em;
+            margin-bottom: 20px; /* کاهش فاصله برای افقی شدن */
             color: #2c3e50;
         }
 
         .services-container {
+            /* تغییرات کلیدی برای افقی و اسکرول */
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping to next line */
-            justify-content: center;
-            gap: 20px; /* Space between items */
-            max-width: 1200px; /* Limit width for better readability */
-            margin: 0 auto; /* Center the container */
-            overflow-x: auto; /* Enable horizontal scrolling if needed */
-            padding-bottom: 15px; /* Space for scrollbar */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+            flex-wrap: nowrap; /* جلوگیری از رفتن به خط جدید */
+            overflow-x: auto; /* فعال کردن اسکرول افقی */
+            padding-bottom: 20px; /* فضای لازم برای نوار اسکرول */
+            gap: 20px; /* فاصله بین آیتم‌ها */
+            max-width: 100%;
+            margin: 0 auto;
+            justify-content: flex-start; /* شروع آیتم‌ها از ابتدا */
+        }
+        
+        /* استایل دادن به نوار اسکرول (فقط برای ظاهر بهتر در برخی مرورگرها) */
+        .services-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .services-container::-webkit-scrollbar-thumb {
+            background-color: #bdc3c7;
+            border-radius: 10px;
         }
 
         .service-item {
+            flex: 0 0 auto; /* جلوگیری از تغییر اندازه خودکار */
+            width: 280px; /* عرض ثابت برای هر آیتم */
             background-color: #ecf0f1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1 1 250px; /* Flex properties: grow, shrink, basis */
-            max-width: 300px; /* Maximum width for each item */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; /* Use flexbox for alignment */
-            flex-direction: column; /* Stack content vertically */
-            align-items: center; /* Center items horizontally */
-            justify-content: center; /* Center items vertically */
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
             text-align: center;
+            border-top: 5px solid #3498db; 
+            flex-shrink: 0; /* اطمینان از عدم کوچک شدن بیش از حد */
+        }
+        
+        /* تغییر رنگ هنگام اشاره (Hover) */
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
+        .service-item:hover .icon {
+            color: #e74c3c; /* تغییر رنگ آیکون به قرمز در هاور */
+        }
+        
         .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+             border-top-color: #e74c3c; /* تغییر رنگ خط بالا در هاور */
+        }
+
+        .service-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+            transition: color 0.3s ease; /* اضافه کردن ترنزیشن به رنگ آیکون */
         }
 
         .service-item h3 {
             margin-top: 0;
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
+        
+        /* آیکون‌های Font Awesome (محتوای یونیکد برای رفع مشکل نمایش) */
+        .icon.scale::before { content: "\f252"; } 
+        .icon.gavel::before { content: "\f0e3"; } 
+        .icon.family::before { content: "\f4d8"; } 
+        .icon.building-2::before { content: "\f3d1"; } 
+        .icon.handshake::before { content: "\f500"; } 
+        .icon.factory::before { content: "\f9b5"; } 
+        .icon.tax::before { content: "\f573"; } 
+        .icon.users-gear::before { content: "\f511"; } 
+        .icon.user-shield::before { content: "\f502"; } 
+        .icon.stethoscope::before { content: "\f0f3"; } 
+        .icon.shield-check::before { content: "\f252"; } 
+        .icon.hard-hat::before { content: "\f81f"; } 
 
-        .service-item p {
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
 
-        .address {
-            padding: 40px 20px;
-            background-color: #e0e0e0;
+        /* --------------------------------
+           بخش جدید: جامعه حقوقدانان
+           -------------------------------- */
+        .legal-community {
+            padding: 60px 20px;
             text-align: center;
+            background-color: #e8f6f3; /* رنگ پس زمینه ملایم */
         }
-
-        .address h2 {
-            font-size: 2.2em;
+        .legal-community h2 {
+            font-size: 2.3em;
             margin-bottom: 20px;
             color: #2c3e50;
         }
-
-        .address p {
+        .legal-community .community-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .legal-community .icon-box {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .legal-community .icon-box .icon {
+            font-size: 3em;
+            color: #1abc9c; /* رنگ سبز */
+        }
+        .legal-community p {
             font-size: 1.1em;
             line-height: 1.7;
-            margin-bottom: 10px;
+            color: #555;
         }
+        .icon.community::before { content: "\f51c"; } /* Users icon for Community */
 
-        .social-icons {
-            text-align: center;
-            margin-top: 30px;
-            padding-bottom: 30px;
-            background-color: #fff; /* White background for social icons */
+        /* --------------------------------
+           بخش فوتر (Footer) - نظرات، آدرس، تماس
+           -------------------------------- */
+        .footer-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
         }
-
+        .footer-section h3 {
+            color: #1abc9c;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 5px;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
         .social-icons a {
-            font-size: 2em;
-            margin: 0 15px;
-            color: #3498db;
-            text-decoration: none;
+            font-size: 1.5em;
+            margin: 0 10px 0 0;
+            color: #ecf0f1;
             transition: color 0.3s ease;
         }
-
         .social-icons a:hover {
-            color: #2980b9;
+            color: #1abc9c;
         }
-
-        /* Chat widget */
+        .footer-section .icon {
+            color: #1abc9c;
+        }
+        
+        /* --------------------------------
+           ویجت چت (Chat Widget) - ثابت از نسخه قبل
+           -------------------------------- */
         .chat-widget {
             position: fixed;
-            right: 15px;
-            bottom: 15px;
-            width: 300px;
-            background-color: #fff;
+            right: 20px;
+            bottom: 20px;
+            width: 320px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             z-index: 1000;
-            display: flex;
+            display: none; 
             flex-direction: column;
-            font-family: 'Tahoma', sans-serif; /* Ensure consistent font */
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        .chat-widget.open {
+            display: flex; 
         }
 
         .chat-header {
-            background-color: #3498db;
+            background-color: #2980b9;
             color: white;
-            padding: 10px 15px;
+            padding: 12px 15px;
             display: flex;
             align-items: center;
-            cursor: pointer; /* Make header clickable */
+            cursor: pointer;
         }
 
         .chat-header img {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             margin-left: 10px;
-            border: 2px solid white;
+            border: 2px solid #f4f4f4;
+        }
+
+        .chat-header .operator-info {
+            line-height: 1.3;
         }
 
         .chat-header .operator-name {
             font-weight: bold;
+            display: block;
+            font-size: 1.1em;
+        }
+        
+        .chat-header .operator-status {
+            font-size: 0.8em;
+            opacity: 0.8;
         }
 
         .chat-messages {
-            height: 300px; /* Fixed height for messages area */
+            height: 350px;
             overflow-y: auto;
             padding: 15px;
-            background-color: #f9f9f9;
-            border-top: 1px solid #eee;
+            background-color: #fff;
+        }
+
+        .chat-message {
+            padding: 8px 12px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+        
+        .chat-user {
+            background-color: #dcf8c6;
+            margin-left: auto;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chat-operator {
+            background-color: #ecf0f1;
+            margin-right: auto;
+            border-bottom-left-radius: 3px;
         }
 
         .chat-input {
             display: flex;
             padding: 10px 15px;
             border-top: 1px solid #eee;
-            background-color: #fff;
+            background-color: #f9f9f9;
         }
 
         .chat-input input {
             flex-grow: 1;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 8px 10px;
+            border-radius: 20px;
+            padding: 10px 15px;
             margin-left: 10px;
-            font-family: 'Tahoma', sans-serif;
         }
 
         .chat-input button {
             background-color: #3498db;
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 20px;
             cursor: pointer;
-            margin-left: 5px;
             transition: background-color 0.3s ease;
         }
 
@@ -347,100 +436,110 @@
             background-color: #2980b9;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+        .chat-minimize-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            display: none; 
+        }
+
+        .chat-header.minimized .chat-minimize-button {
+            display: block;
+        }
+        
+        .icon.send::before { content: "\f1d8"; }
+        .icon.instagram::before { content: "\f16d"; }
+        .icon.whatsapp::before { content: "\f232"; }
+        .icon.bale::before { content: "\f700"; } 
+        .icon.phone::before { content: "\f095"; } 
+        .icon.map-marker-alt::before { content: "\f3c5"; }
+
+        /* --------------------------------
+           رسپانسیو (Responsive)
+           -------------------------------- */
+        @media (max-width: 992px) {
             .navbar ul {
-                display: none; /* Hide regular nav */
+                display: none;
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
                 background-color: #34495e;
-                padding: 10px 0;
                 width: 100%;
                 z-index: 10;
             }
 
-            .navbar li {
-                margin: 10px 15px;
-                text-align: center;
+            .navbar ul.show {
+                display: flex;
             }
 
-            .navbar ul.show {
-                display: flex; /* Show when hamburger is clicked */
+            .navbar li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            .navbar a {
+                 padding: 12px 0;
             }
 
             .navbar .hamburger {
-                display: block; /* Show hamburger */
+                display: block;
             }
 
             .header h1 {
                 font-size: 1.5em;
             }
 
-            .header .contact-info {
-                position: static;
-                transform: none;
-                margin-top: 5px;
-                font-size: 0.8em;
-            }
-
-            .hero-content h2 {
-                font-size: 2em;
-            }
-
-            .hero-content p {
-                font-size: 1.2em;
-            }
-
-            .services-container {
-                flex-direction: column; /* Stack service items vertically */
+            .header .contact-info-bar {
+                flex-direction: column;
                 align-items: center;
             }
 
-            .service-item {
-                width: 90%;
-                max-width: none;
+            .hero-content h2 {
+                font-size: 2.5em;
             }
-
+            
+            .footer-sections {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-section {
+                padding: 0 10px;
+            }
+            
+            /* تنظیمات چت در موبایل */
             .chat-widget {
                 width: 90%;
                 right: 5%;
-                bottom: 15px;
+                bottom: 10px;
+            }
+            #chat-trigger {
+                right: 10px;
             }
         }
-
-        /* Styles for services that need specific icons */
-        .services-container .service-item.tax-services h3::before {
-            content: '\f573'; /* Tax icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: #3498db;
-            margin-left: 8px;
-        }
-        .services-container .service-item.hse-services h3::before {
-            content: '\f197'; /* Hard hat icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: #3498db;
-            margin-left: 8px;
-        }
-
     </style>
 </head>
 <body>
 
     <header class="header">
-        <div class="contact-info">
-            <span class="phone"><i class="icon phone"></i> 021-12345678</span>
+        <div class="header-content">
+            <h1>موسسه حقوقی و مالی عدالت حسابان</h1>
+            <div class="contact-info-bar">
+                <div class="contact-info">
+                    <span class="phone"><i class="icon phone"></i> تلفن: 021-12345678</span>
+                </div>
+                <div class="slogan">"عدالت، حسابرسی، اطمینان"</div>
+            </div>
         </div>
-        <h1>موسسه حقوقی و مالی عدالت حسابان</h1>
-        <div class="slogan">"عدالت، حسابرسی، اطمینان"</div>
     </header>
 
     <nav class="navbar">
-        <div class="hamburger">
+        <div class="hamburger" id="hamburger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -448,158 +547,234 @@
         <ul id="nav-menu">
             <li><a href="#home">صفحه اصلی</a></li>
             <li><a href="#services">خدمات</a></li>
+            <li><a href="#community">جامعه حقوقدانان</a></li>
             <li><a href="#about">درباره ما</a></li>
             <li><a href="#contact">تماس با ما</a></li>
+            <li><a href="#news">اخبار</a></li> 
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2>راهنمای شما در مسیر عدالت</h2>
-            <p>ارائه دهنده تخصصی ترین خدمات حقوقی و مالی</p>
-            <a href="#services" class="cta-button">خدمات ما</a>
+            <h2>راهنمای شما در مسیر عدالت و شفافیت مالی</h2>
+            <p>با تکیه بر تخصص، به اطمینان مالی و حقوقی دست یابید.</p>
+            <a href="#services" class="cta-button">مشاهده خدمات</a>
         </div>
     </section>
 
     <section id="services" class="services">
-        <h2>خدمات تخصصی ما</h2>
-        <div class="services-container">
+        <h2>خدمات تخصصی</h2>
+        <!-- اصلاح شده: افقی و اسکرول‌پذیر -->
+        <div class="services-container" id="services-container"> 
+            
+            <!-- حقوقی و کیفری -->
             <div class="service-item">
                 <i class="icon scale"></i>
-                <h3>حقوقی</h3>
-                <p>مشاوره و وکالت در تمامی دعاوی حقوقی.</p>
+                <h3>دعاوی حقوقی</h3>
+                <p>مشاوره، تنظیم دادخواست و وکالت تخصصی در دعاوی مدنی.</p>
             </div>
             <div class="service-item">
                 <i class="icon gavel"></i>
-                <h3>کیفری</h3>
-                <p>دفاع از حقوق موکلین در پرونده های کیفری.</p>
+                <h3>پرونده‌های کیفری</h3>
+                <p>دفاع کارآمد در کلیه مراحل دادرسی کیفری.</p>
             </div>
+            <!-- خانواده -->
             <div class="service-item">
-                <i class="icon heart-broken"></i>
-                <h3>خانواده</h3>
-                <p>رسیدگی به پرونده های خانوادگی و طلاق.</p>
+                <i class="icon family"></i>
+                <h3>امور خانواده</h3>
+                <p>رسیدگی تخصصی به پرونده‌های طلاق، حضانت و مهریه.</p>
             </div>
+            <!-- شرکت‌ها و قراردادها -->
             <div class="service-item">
                 <i class="icon building-2"></i>
                 <h3>ثبت و تغییرات شرکت‌ها</h3>
-                <p>انجام کلیه امور ثبتی و تغییرات شرکت‌ها.</p>
+                <p>تاسیس، انحلال و اعمال کلیه تغییرات ثبتی.</p>
             </div>
             <div class="service-item">
+                <i class="icon handshake"></i>
+                <h3>قراردادها و تعهدات</h3>
+                <p>تنظیم، تفسیر و حل اختلافات قراردادی.</p>
+            </div>
+            <!-- پروانه‌ها و مجوزها -->
+            <div class="service-item">
                 <i class="icon hard-hat"></i>
-                <h3>پروانه پیمانکاری</h3>
-                <p>اخذ و تمدید پروانه های پیمانکاری.</p>
+                <h3>پروانه‌های پیمانکاری و HSE</h3>
+                <p>اخذ، تمدید و ارتقاء رتبه های پیمانکاری و HSE.</p>
             </div>
             <div class="service-item">
                 <i class="icon factory"></i>
-                <h3>پروانه های صنعتی و معدنی</h3>
-                <p>خدمات مربوط به اخذ پروانه های صنعتی و معدنی.</p>
+                <h3>پروانه‌های صنعتی و معدنی</h3>
+                <p>مشاوره کامل جهت اخذ مجوزهای صنعتی و معدنی.</p>
             </div>
-            <div class="service-item tax-services">
-                <i class="icon receipt-tax"></i>
+            <!-- مالیاتی و تامین اجتماعی -->
+            <div class="service-item">
+                <i class="icon tax"></i>
                 <h3>امور مالیاتی</h3>
-                <p>مشاوره و پیگیری پرونده های مالیاتی.</p>
+                <p>نمایندگی و دفاع در برابر سازمان امور مالیاتی.</p>
             </div>
             <div class="service-item">
-                <i class="icon users"></i>
+                <i class="icon users-gear"></i>
                 <h3>تامین اجتماعی</h3>
-                <p>پیگیری و حل مشکلات بیمه تامین اجتماعی.</p>
+                <p>حل مغایرت‌های بیمه‌ای و بازرسی.</p>
             </div>
+            <!-- کار و پزشکی -->
             <div class="service-item">
-                <i class="icon user-check"></i>
+                <i class="icon user-shield"></i>
                 <h3>روابط کارگر و کارفرما</h3>
-                <p>حل اختلافات و مشاوره در زمینه روابط کار.</p>
+                <p>داوری و حل اختلافات کارگری مطابق قانون کار.</p>
             </div>
             <div class="service-item">
                 <i class="icon stethoscope"></i>
-                <h3>حقوق پزشکی</h3>
-                <p>مشاوره و وکالت در دعاوی مرتبط با حوزه پزشکی.</p>
+                <h3>حقوق پزشکی و سلامت</h3>
+                <p>پیگیری پرونده‌های مربوط به تخلفات پزشکی.</p>
             </div>
-            <div class="service-item">
-                <i class="icon shield-check"></i>
-                <h3>رتبه بندی HSE</h3>
-                <p>دریافت و ارتقاء رتبه های HSE.</p>
-            </div>
-            <div class="service-item">
+             <div class="service-item">
                 <i class="icon building-2"></i>
-                <h3>امور ابنیه</h3>
-                <p>خدمات مشاوره و اجرایی در امور ابنیه.</p>
+                <h3>امور ابنیه و املاک</h3>
+                <p>مشاوره تخصصی در دعاوی ملکی و ساخت‌وساز.</p>
             </div>
         </div>
     </section>
-
-    <section id="about" class="address">
-        <h2>درباره ما</h2>
-        <p>موسسه حقوقی و مالی عدالت حسابان با تیمی مجرب و متخصص، آماده ارائه راهنمایی و خدمات جامع حقوقی و مالی به شما عزیزان است.</p>
-        <p>هدف ما، برقراری عدالت و تامین منافع شماست.</p>
+    
+    <!-- بخش جدید: جامعه حقوقدانان -->
+    <section id="community" class="legal-community">
+        <h2>جامعه حقوقدانان عدالت حسابان</h2>
+        <div class="community-content">
+            <div class="icon-box">
+                <i class="icon community"></i>
+            </div>
+            <p>ما مفتخریم که شبکه وسیعی از کارشناسان و حقوقدانان برجسته کشور را در کنار خود داریم. این شبکه تضمین می‌کند که برای پیچیده‌ترین پرونده‌ها، متخصص‌ترین راهکارها ارائه شود. تخصص، تعهد و صداقت، هسته اصلی تیم ما است.</p>
+        </div>
     </section>
 
-    <section class="social-icons">
-        <h2>شبکه های اجتماعی</h2>
-        <a href="#" aria-label="اینستاگرام"><i class="icon instagram"></i></a>
-        <a href="#" aria-label="واتساپ"><i class="icon whatsapp"></i></a>
-        <a href="#" aria-label="بله"><i class="icon bale"></i></a>
-    </section>
+    <!-- بخش فوتر اصلاح شده (درباره ما، آدرس، تماس، نظرات) -->
+    <div class="footer-sections">
+        <section class="footer-section" id="about">
+            <h3>درباره موسسه</h3>
+            <p>موسسه حقوقی و مالی عدالت حسابان با اتکا بر دانش روز و تعهد به اصول اخلاقی، ارائه دهنده راه حل‌های جامع برای چالش‌های حقوقی و مالی شماست. ما در کنار شما هستیم.</p>
+        </section>
+        
+        <section class="footer-section" id="contact">
+            <h3>اطلاعات تماس</h3>
+            <p><i class="icon map-marker-alt"></i> آدرس: تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج A، طبقه ۱۰، واحد ۱</p>
+            <p><i class="icon phone"></i> تلفن: 021-12345678</p>
+            <p>ایمیل: info@edalathesaban.com</p>
+        </section>
+        
+        <section class="footer-section" id="testimonials">
+            <h3>نظرات مشتریان</h3>
+            <p>"خدمات مالیاتی آنها فوق‌العاده حرفه‌ای بود." - علی م.</p>
+            <p>"وکالت ایشان در پرونده خانوادگی بسیار مؤثر بود." - سارا ر.</p>
+        </section>
 
-    <section id="contact" class="address">
-        <h2>آدرس و تماس</h2>
-        <p><i class="icon map-marker-alt"></i> آدرس: تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج A، طبقه ۱۰، واحد ۱</p>
-        <p><i class="icon phone"></i> تلفن: 021-12345678</p>
-        <p>ایمیل: info@edalathesaban.com</p>
-    </section>
-
-    <!-- Chat Widget -->
-    <div class="chat-widget">
-        <div class="chat-header">
-            <img src="images/operator-avatar.jpg" alt="Operator Avatar"> <!-- Placeholder for operator avatar -->
-            <span class="operator-name">پشتیبان آنلاین</span>
-        </div>
-        <div class="chat-messages" id="chat-messages">
-            <!-- Chat messages will appear here -->
-            <p>سلام! چطور می توانم به شما کمک کنم؟</p>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="chat-input" placeholder="پیام خود را وارد کنید...">
-            <button onclick="sendMessage()"><i class="icon"></i>ارسال</button>
-        </div>
+        <section class="footer-section">
+            <h3>شبکه‌های اجتماعی</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="اینستاگرام"><i class="icon instagram"></i></a>
+                <a href="#" aria-label="واتساپ"><i class="icon whatsapp"></i></a>
+                <a href="#" aria-label="بله"><i class="icon bale"></i></a>
+            </div>
+        </section>
     </div>
 
+    <!-- بخش اخبار (برای منوی ناوبری) -->
+    <section id="news" class="services" style="background-color: #f4f4f4;">
+        <h2>آخرین اخبار و مقالات</h2>
+        <div class="services-container" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="service-item" style="border-top-color: #e74c3c; width: 100%;">
+                <h3>تغییرات جدید قانون کار</h3>
+                <p>بررسی آخرین مصوبات مربوط به روابط کار و مزایا.</p>
+            </div>
+            <div class="service-item" style="border-top-color: #e74c3c; width: 100%;">
+                <h3>نکات کلیدی اظهارنامه مالیاتی ۱۴۰۴</h3>
+                <p>راهنمای پر کردن صحیح اظهارنامه برای جلوگیری از جریمه.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ویجت چت -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header" id="chat-header">
+            <img src="operator-avatar.jpg" alt="تصویر اپراتور"> 
+            <div class="operator-info">
+                <span class="operator-name">مهندس احمدی (پشتیبان حقوقی)</span>
+                <span class="operator-status">آنلاین - آماده پاسخگویی</span>
+            </div>
+            <button class="chat-minimize-button" onclick="toggleChat()">بستن</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message chat-operator">سلام! خوش آمدید. شما با مهندس احمدی در ارتباط هستید. موضوع سوالتان چیست؟</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="پیام خود را بنویسید...">
+            <button onclick="sendMessage()"><i class="icon send"></i></button>
+        </div>
+    </div>
+    
+    <!-- دکمه شناور چت (فقط دکمه) -->
+    <button id="chat-trigger" class="chat-trigger-button" onclick="toggleChat()" style="position: fixed; right: 20px; bottom: 20px; background-color: #e74c3c; border: none; padding: 15px; border-radius: 50%; cursor: pointer; z-index: 1001; display: block;">
+        <i class="icon fa-solid fa-headset" style="font-size: 1.5em; color: white;"></i>
+    </button>
+
     <script>
-        const hamburger = document.querySelector('.hamburger');
+        // 1. منوی همبرگری
+        const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('show');
         });
 
-        // Close menu when clicking outside of it
         document.addEventListener('click', (event) => {
             if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
                 navMenu.classList.remove('show');
             }
         });
+        
+        // 2. مدیریت ویجت چت
+        const chatWidget = document.getElementById('chat-widget');
+        const chatTrigger = document.getElementById('chat-trigger');
+        const chatHeader = document.getElementById('chat-header');
 
-        // Chat functionality (simplified)
+        chatTrigger.style.display = 'block'; 
+
+        function toggleChat() {
+            const isOpen = chatWidget.classList.contains('open');
+            
+            if (isOpen) {
+                chatWidget.classList.remove('open');
+                chatTrigger.style.display = 'block';
+                chatHeader.classList.remove('minimized');
+            } else {
+                chatWidget.classList.add('open');
+                chatTrigger.style.display = 'none';
+                chatHeader.classList.add('minimized');
+            }
+        }
+
         function sendMessage() {
             const input = document.getElementById('chat-input');
             const messageText = input.value.trim();
             if (messageText === '') return;
 
             const chatMessages = document.getElementById('chat-messages');
-            const newMessage = document.createElement('p');
-            newMessage.textContent = messageText;
-            // You can add styling here for user messages vs bot messages if needed
-            chatMessages.appendChild(newMessage);
+            
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message chat-user';
+            userMessage.textContent = messageText;
+            chatMessages.appendChild(userMessage);
+            
             input.value = '';
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            setTimeout(() => {
+                const operatorMessage = document.createElement('div');
+                operatorMessage.className = 'chat-message chat-operator';
+                operatorMessage.textContent = `در حال بررسی درخواست شما در مورد "${messageText.substring(0, 20)}..." هستیم.`;
+                chatMessages.appendChild(operatorMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1500);
         }
-
-        // Placeholder for operator avatar image - assuming it's in an 'images' folder
-        // You should replace 'images/operator-avatar.jpg' with the actual path to an avatar image.
-        // If no avatar image is available, you can hide the image element or use a default icon.
-
-        // Ensure Font Awesome icons are correctly displayed (especially for custom ones like 'bale')
-        // If 'bale' icon isn't standard, you might need to use a custom SVG or a different icon.
-        // For simplicity, 'bale' icon is using a generic unicode content here.
-        document.querySelectorAll('.chat-input button i').forEach(icon => {
-            icon.className = 'icon'; // Apply base icon class
-            // You might need to add specific Font Awesome class
+    </script>
+</body>
+</html>
