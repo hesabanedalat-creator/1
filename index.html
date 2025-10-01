@@ -41,9 +41,17 @@
             position: relative;
         }
 
+        .header .logo { /* استایل برای لوگو */
+            height: 50px; /* اندازه دلخواه برای لوگو */
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+
         .header h1 {
             margin: 0;
             font-size: 1.8em;
+            display: inline-block; /* برای قرار گرفتن کنار لوگو */
+            vertical-align: middle;
         }
 
         .header .contact-info-bar {
@@ -70,6 +78,7 @@
             align-items: center;
             padding: 0;
             position: relative;
+            z-index: 50; /* اطمینان از قرارگیری بالاتر از سایر محتوا */
         }
 
         .navbar .hamburger {
@@ -79,7 +88,7 @@
             position: absolute;
             right: 0;
             top: 0;
-            z-index: 50;
+            z-index: 55; /* بالاتر از منو */
         }
 
         .navbar .hamburger .line {
@@ -117,7 +126,8 @@
            بخش قهرمان (Hero Section)
            -------------------------------- */
         .hero {
-            background: url('https://via.placeholder.com/1920x450?text=Law+Firm+Background') no-repeat center center/cover; 
+            /* **اصلاح شده: استفاده از URL تصویر مناسب** */
+            background: url('https://www.yourwebsite.com/path/to/your/hero-background.jpg') no-repeat center center/cover; /* **آدرس عکس بک‌گراند خود را اینجا قرار دهید** */
             height: 450px;
             display: flex;
             justify-content: center;
@@ -341,6 +351,7 @@
             cursor: pointer;
         }
 
+        /* **اصلاح شده: اضافه شدن تگ img برای لوگو** */
         .chat-header img {
             width: 45px;
             height: 45px;
@@ -536,10 +547,12 @@
     <!-- هدر -->
     <header class="header">
         <div class="header-content">
+            <!-- **اصلاح شده: اضافه شدن تگ img برای لوگو** -->
+            <!-- **لطفا آدرس واقعی لوگوی خود را جایگزین کنید** -->
+            <img src="https://www.yourwebsite.com/path/to/your/logo.png" alt="لوگوی موسسه" class="logo"> 
             <h1>موسسه حقوقی و مالی عدالت حسابان</h1>
             <div class="contact-info-bar">
                 <div class="contact-info">
-                    <!-- استفاده از تگ i برای آیکون تلفن -->
                     <span class="phone"><i class="icon-fa fas fa-phone"></i> تلفن: 021-12345678</span>
                 </div>
                 <div class="slogan">"عدالت، حسابرسی، اطمینان"</div>
@@ -549,6 +562,7 @@
 
     <!-- نویگیشن (شامل منوی همبرگری) -->
     <nav class="navbar">
+        <!-- **اصلاح شده: منوی همبرگری دوباره فعال شد** -->
         <div class="hamburger" id="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -697,7 +711,8 @@
     <!-- ویجت چت - **اصلاح شده: استفاده از i با کلاس‌های FA** -->
     <div class="chat-widget" id="chat-widget">
         <div class="chat-header" id="chat-header">
-            <img src="https://via.placeholder.com/45/3498db/ffffff?text=OP" alt="تصویر اپراتور"> 
+            <!-- **لطفا آدرس واقعی لوگوی چت را جایگزین کنید** -->
+            <img src="https://www.yourwebsite.com/path/to/your/chat-logo.png" alt="تصویر اپراتور"> 
             <div class="operator-info">
                 <span class="operator-name">مهندس احمدی (پشتیبان حقوقی)</span>
                 <span class="operator-status">آنلاین - آماده پاسخگویی</span>
@@ -728,10 +743,13 @@
         });
 
         document.addEventListener('click', (event) => {
-            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                if (navMenu.classList.contains('show')) {
-                    navMenu.classList.remove('show');
-                }
+            // بستن منو در صورت کلیک خارج از آن
+            if (!navMenu.classList.contains('show')) return; // اگر بسته است، کاری نکن
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger) {
+                navMenu.classList.remove('show');
             }
         });
         
