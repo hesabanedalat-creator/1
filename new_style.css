@@ -63,6 +63,12 @@ a {
     top: 0;
     z-index: 1000;
 }
+header .logo { /* استایل برای لوگو */
+    height: 50px; /* اندازه دلخواه برای لوگو */
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
 
 .header-content {
     display: flex;
@@ -398,3 +404,4 @@ a {
         width: 100%;
     }
 }
+
