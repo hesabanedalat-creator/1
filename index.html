@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <style>
+        /* 1. استایل کلی و ریست */
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl; /* برای راست به چپ بودن محتوا */
+        }
+
+        /* --- استایل‌های منوی همبرگری (اضافه شده) --- */
+
+        /* 2. استایل نوار ناوبری اصلی (Header) */
+        .navbar {
+            background-color: #333; /* رنگ پس‌زمینه نوار */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        /* 3. استایل آیتم‌های منو (فقط برای دسکتاپ نمایش داده می‌شود) */
+        .nav-links {
+            list-style: none;
+            display: flex; /* نمایش افقی در دسکتاپ */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #575757;
+        }
+
+        /* 4. استایل آیکون همبرگری (فقط در موبایل نمایش داده می‌شود) */
+        .hamburger {
+            display: none; /* پیش‌فرض: مخفی باشد */
+            cursor: pointer;
+            font-size: 24px;
+            padding: 5px;
+        }
+
+        /* 5. استایل برای حالت باز بودن منو (فقط در موبایل) */
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: #333;
+        }
+
+        /* 6. قوانین واکنش‌گرایی (Media Queries) */
+        @media (max-width: 768px) {
+            /* نمایش آیکون همبرگری و مخفی کردن لینک‌ها */
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none; /* لینک‌ها را مخفی کن */
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links li {
+                text-align: center;
+                width: 100%;
+            }
+
+            .nav-links li a {
+                padding: 15px 0;
+                border-top: 1px solid #444;
+            }
+
+            /* نمایش لینک‌ها هنگام فعال شدن کلاس active */
+            .nav-links.active {
+                display: flex;
+            }
+        }
+        /* --- پایان استایل‌های منوی همبرگری --- */
+    </style>
+</head>
+<body>
+
+    <!-- HTML منوی همبرگری (جایگزین منوی قبلی) -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home"> </a>
+        </div>
+        
+        <!-- آیکون همبرگری -->
+        <div class="hamburger" id="hamburger-icon">
+            &#9776; <!-- کد یونیکد برای سه خط افقی -->
+        </div>
+
+        <!-- لیست لینک‌ها -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">صفحه اصلی</a></li>
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#community">جامعه حقوقدانان</a></li>
+            <li><a href="#community">امور مالیاتی </a></li>
+            <li><a href="#community"> حقوق خصوصی</a></li>
+            <li><a href="#community">کیفری </a></li>
+            <li><a href="#community"> پروانه ها</a></li>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+            <li><a href="#news">اخبار</a></li>
+        </ul>
+    </nav>
+    
+    <!-- محتوای اصلی صفحه (از فایل اصلی شما گرفته شده است) -->
+    <div style="padding: 20px;">
+    </div>
+
+    <!-- JavaScript منوی همبرگری (اضافه شده) -->
+    <script>
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        // فعال‌سازی کلیک روی آیکون همبرگری
+        hamburgerIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // بستن منو هنگام کلیک روی یکی از لینک‌ها (برای بهبود تجربه موبایل)
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
