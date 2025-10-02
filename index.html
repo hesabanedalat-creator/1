@@ -53,6 +53,44 @@
             display: inline-block; /* برای قرار گرفتن کنار لوگو */
             vertical-align: middle;
         }
+        <header class="main-header">
+    <div class="container header-content">
+        
+        <!-- بخش لوگو -->
+        <div class="logo">
+            <a href="#home">
+                <!-- مطمئن شوید مسیر 'images/logo.png' صحیح است -->
+                <img src="images/logo.png" alt="لوگوی شرکت">
+            </a>
+        </div>
+        
+        <!-- بلوک منوی همبرگری -->
+        <nav class="navbar">
+            
+            <!-- 1. دکمه همبرگری (Toggle Button) -->
+            <!-- این دکمه در موبایل نمایش داده می‌شود و منو را باز و بسته می‌کند -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i> <!-- آیکون سه خط با استفاده از Font Awesome -->
+            </button>
+            
+            <!-- 2. لیست لینک‌ها (که در موبایل مخفی و با کلیک نمایش داده می‌شود) -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">صفحه اصلی</a></li>
+                <li><a href="#services">خدمات</a></li>
+                <li><a href="#community">جامعه حقوقدانان</a></li>
+                <li><a href="#community">امور مالیاتی</a></li>
+                <li><a href="#community">حقوق خصوصی</a></li>
+                <li><a href="#community">کیفری</a></li>
+                <li><a href="#community">پروانه ها</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#contact">تماس با ما</a></li>
+                <li><a href="#news">اخبار</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+</header>
+
 <
 
         .header .contact-info-bar {
@@ -808,5 +846,6 @@
     </script>
 </body>
 </html>
+
 
 
