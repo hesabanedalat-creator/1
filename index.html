@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسسه حقوقی و مشاوره‌ای</title>
+    
+    <!-- لینک به Font Awesome برای آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- لینک به فایل CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- ======================= 1. Header & Navigation ======================= -->
+    <header class="main-header">
+        <div class="header-container">
+            
+            <!-- لوگو، اسم موسسه و شعار -->
+            <div class="branding">
+                <img src="images/logo.png" alt="لوگوی موسسه" class="logo-img">
+                <div class="text-branding">
+                    <h1>نام موسسه حقوقی و مشاوره‌ای</h1>
+                    <p class="slogan">شعار موسسه: عدالت در دستان متخصصان</p>
+                </div>
+            </div>
+
+            <!-- منوی همبرگری -->
+            <nav class="navbar">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">صفحه اصلی</a></li>
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#community">جامعه حقوقدانان</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                    <li><a href="#news">اخبار</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- ======================= 2. Hero Section (تبلیغات با تصویر) ======================= -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h2>مشاوره‌های حقوقی تخصصی در تمامی حوزه‌ها</h2>
+            <p>با تیمی مجرب، اطمینان و آرامش را در پرونده‌های خود تجربه کنید.</p>
+            <a href="#contact" class="cta-button">درخواست مشاوره فوری</a>
+        </div>
+    </section>
+
+    <!-- ======================= 3. Services Section (خدمات کشویی) ======================= -->
+    <section class="services-section" id="services">
+        <h2 class="section-title">خدمات تخصصی ما</h2>
+        
+        <!-- SERVICES SLIDER (اسلایدر/اسکرول افقی) -->
+        <div class="services-slider-wrapper">
+            <div class="services-slider">
+                
+                <!-- هر آیتم خدمات -->
+                <a href="tax-services.html" class="service-item">
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <p>امور مالیاتی</p>
+                </a>
+                
+                <a href="legal-services.html" class="service-item">
+                    <i class="fas fa-balance-scale service-icon"></i>
+                    <p>حقوق خصوصی</p>
+                </a>
+                
+                <a href="criminal-services.html" class="service-item">
+                    <i class="fas fa-lock service-icon"></i>
+                    <p>حقوق کیفری</p>
+                </a>
+                
+                <a href="contracts.html" class="service-item">
+                    <i class="fas fa-file-contract service-icon"></i>
+                    <p>امور قراردادها</p>
+                </a>
+                
+                <a href="permits.html" class="service-item">
+                    <i class="fas fa-certificate service-icon"></i>
+                    <p>پروانه صلاحیت</p>
+                </a>
+                
+                <a href="hse.html" class="service-item">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <p>مشاوره‌ HSE</p>
+                </a>
+                
+                <a href="mining-permits.html" class="service-item">
+                    <i class="fas fa-mountain service-icon"></i>
+                    <p>پروانه صنعتی و معدنی</p>
+                </a>
+                
+                <a href="construction.html" class="service-item">
+                    <i class="fas fa-building service-icon"></i>
+                    <p>امور ابنیه</p>
+                </a>
+                
+                <a href="company-registration.html" class="service-item">
+                    <i class="fas fa-sitemap service-icon"></i>
+                    <p>ثبت و تغییرات شرکت‌ها</p>
+                </a>
+                
+                <a href="ranking.html" class="service-item">
+                    <i class="fas fa-medal service-icon"></i>
+                    <p>رتبه‌بندی</p>
+                </a>
+                
+                <a href="business-card.html" class="service-item">
+                    <i class="fas fa-id-card-alt service-icon"></i>
+                    <p>کارت بازرگانی</p>
+                </a>
+                
+                <a href="commerce-system.html" class="service-item">
+                    <i class="fas fa-store-alt service-icon"></i>
+                    <p>سامانه جامع تجارت</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ======================= 4. Legal Community Section ======================= -->
+    <section class="community-section" id="community">
+        <h2 class="section-title">جامعه حقوقدانان</h2>
+        <div class="community-content">
+            <i class="fas fa-users-cog community-icon"></i>
+            <p>شبکه‌ای پویا از وکلا، کارشناسان و دانشگاهیان برای تبادل دانش، انجام پروژه‌های مشترک و ارتقاء سطح علمی و عملی حقوق در کشور.</p>
+        </div>
+    </section>
+
+    <!-- ======================= 5. News Ticker (اخبار متحرک) ======================= -->
+    <section class="news-ticker-section" id="news">
+        <div class="news-header">
+            <i class="fas fa-newspaper news-icon"></i>
+            <h3>آخرین اخبار موسسه</h3>
+        </div>
+        
+        <!-- News Scroller -->
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <span class="ticker-item">● اطلاعیه: شروع کارگاه آموزشی حقوق قراردادها - ۱۵ مهر</span>
+                <span class="ticker-item">● تحلیل: جدیدترین تغییرات در قانون مالیات بر ارزش افزوده</span>
+                <span class="ticker-item">● رویداد: همایش جامعه حقوقی در تاریخ ۲۰ مهر ماه</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= 6. Footer & Contact Info ======================= -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            
+            <!-- اطلاعات تماس -->
+            <div class="contact-info">
+                <h3>تماس با ما</h3>
+                <p><i class="fas fa-map-marker-alt"></i> **آدرس:** تهران، خیابان ولیعصر، کوچه دوم، پلاک ۳۴</p>
+                <p><i class="fas fa-phone"></i> **شماره تماس:** ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                <p><i class="fas fa-envelope"></i> **ایمیل:** info@your-institute.com</p>
+            </div>
+            
+            <!-- شبکه‌های اجتماعی -->
+            <div class="social-media">
+                <h3>ما را دنبال کنید</h3>
+                <a href="#" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" target="_blank" class="social-icon bale">بله</a> <!-- آیکون بله در Font Awesome استاندارد موجود نیست، از متن استفاده شد -->
+            </div>
+            
+        </div>
+        
+        <!-- نقشه -->
+        <div class="map-section">
+            <h3 class="map-title">محل ما روی نقشه</h3>
+            <!-- کد جاسازی نقشه گوگل. برای نمایش نقشه واقعی، باید آن را از سایت Google Maps Embed API بگیرید و جایگزین کنید -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d161989.17600746972!2d51.27216167664478!3d35.72895240224422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff292a5%3A0x7d28701f2f845c48!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1628080000000!5m2!1sen!2s" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; ۱۴۰۳ | تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <!-- ======================= 7. JavaScript File Link ======================= -->
+    <script src="script.js"></script>
+
+</body>
+</html>
