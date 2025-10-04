@@ -1,0 +1,184 @@
+import os
+
+html_content = """
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع اخذ کارت بازرگانی | مشاوره تخصصی و سریع</title>
+    <meta name="description" content="راهنمای کامل و به‌روز دریافت کارت بازرگانی حقیقی و حقوقی، شرایط، مدارک مورد نیاز و قوانین جدید. مشاوره تخصصی برای تجارت آسان.">
+    <meta name="keywords" content="کارت بازرگانی، اخذ کارت بازرگانی، شرایط کارت بازرگانی، قوانین کارت بازرگانی، سامانه جامع تجارت، مشاوره بازرگانی">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #0056b3;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #0056b3;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 15px;
+            border-right: 5px solid #28a745;
+            background-color: #e9f7ee;
+            border-radius: 5px;
+        }
+        .section h2 {
+            color: #28a745;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        ul li::before {
+            content: "\\2713"; /* Checkmark */
+            color: #28a745;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 30px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        .cta-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .cta-buttons a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-phone {
+            background-color: #ffc107;
+            color: #333;
+        }
+        .btn-phone:hover {
+            background-color: #e0a800;
+        }
+        .btn-whatsapp {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>راهنمای جامع اخذ و مدیریت کارت بازرگانی</h1>
+            <p>مرجع کامل اطلاعات، مدارک و قوانین تجارت بین‌المللی</p>
+        </header>
+
+        <div class="section">
+            <h2>کارت بازرگانی چیست و چرا اهمیت دارد؟</h2>
+            <p>کارت بازرگانی مجوزی است که توسط اتاق بازرگانی، صنایع، معادن و کشاورزی ایران صادر می‌شود و به دارندگان آن اجازه می‌دهد تا فعالیت‌های تجاری مربوط به واردات و صادرات کالا را انجام دهند. این کارت، هویت تجاری شرکت شما در عرصه بین‌المللی را تعریف می‌کند.</p>
+            
+            <h3>انواع کارت بازرگانی:</h3>
+            <ul>
+                <li><strong>کارت بازرگانی موقت:</strong> برای اشخاصی که قصد تجارت در مدت زمان محدود دارند.</li>
+                <li><strong>کارت بازرگانی دائم:</strong> برای اشخاص حقیقی یا حقوقی که فعالیت مستمر تجاری دارند.</li>
+                <li><strong>کارت بازرگانی تولیدی:</strong> برای شرکت‌هایی که عمده فعالیت آن‌ها تولید است و واردات مواد اولیه دارند.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>مراحل کلیدی اخذ کارت بازرگانی (حقیقی و حقوقی)</h2>
+            <p>روند اخذ کارت بازرگانی شامل چند مرحله کلیدی در سامانه جامع تجارت (NTSW) و اتاق بازرگانی است. دقت در ارائه مدارک الزامی است:</p>
+            <ol>
+                <li><strong>ثبت‌نام در سامانه جامع تجارت:</strong> اولین قدم، احراز هویت و تکمیل اطلاعات در پورتال مربوطه است.</li>
+                <li><strong>تکمیل پرونده و ارائه مدارک:</strong> ارائه مدارک هویتی، اساسنامه (برای حقوقی)، جواز کسب (در صورت نیاز)، و گواهی عدم سوء پیشینه.</li>
+                <li><strong>بازرسی و تأیید صلاحیت:</strong> بررسی مدارک توسط کارشناسان اتاق بازرگانی.</li>
+                <li><strong>پرداخت هزینه‌ها و صدور کارت:</strong> پس از تأیید نهایی، کارت صادر و قابل استفاده خواهد بود.</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>قوانین جامع و نکات مهم در استفاده از کارت بازرگانی</h2>
+            <p>رعایت قوانین زیر برای جلوگیری از ابطال کارت و جرایم تجاری ضروری است:</p>
+            <ul>
+                <li><strong>حداقل سرمایه:</strong> در مورد اشخاص حقوقی، سرمایه ثبت شده شرکت باید مطابق با قوانین جاری باشد.</li>
+                <li><strong>عدم فعالیت یا سوءاستفاده:</strong> استفاده از کارت برای مقاصد غیرتجاری یا واگذاری آن به اشخاص ثالث به شدت ممنوع است.</li>
+                <li><strong>تعهدات مالیاتی:</strong> کلیه امور مالیاتی و گمرکی مرتبط با فعالیت‌های تجاری باید به درستی انجام پذیرد.</li>
+                <li><strong>زمان اعتبار:</strong> کارت‌های بازرگانی دارای تاریخ انقضا هستند و باید در موعد مقرر تمدید شوند.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>مقالات و منابع مرتبط (بهینه‌سازی سئو)</h2>
+            <p>برای اطلاعات عمیق‌تر، می‌توانید مقالات زیر را مطالعه کنید (لینک‌های داخلی فرضی):</p>
+            <ul>
+                <li>تفاوت کارت بازرگانی حقیقی و حقوقی: بررسی جامع.</li>
+                <li>مدارک لازم برای تمدید کارت بازرگانی در سال جاری.</li>
+                <li>صفر تا صد فرآیند واردات با کارت بازرگانی.</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2>برای مشاوره تخصصی و اخذ سریع کارت بازرگانی تماس بگیرید</h2>
+            <p>اگر در مراحل اخذ کارت بازرگانی نیاز به راهنمایی تخصصی و صفر تا صد دارید، کارشناسان ما آماده پاسخگویی هستند.</p>
+            <div class="cta-buttons">
+                <!-- شماره تلفن فرضی: 02188880000 -->
+                <a href="tel:02188880000" class="btn-phone">تلفن مستقیم (کلیک کنید)</a>
+                <!-- شماره واتس‌اپ فرضی: +989351112233 -->
+                <a href="https://wa.me/989351112233?text=درخواست مشاوره کارت بازرگانی" class="btn-whatsapp">ارتباط از طریق واتس‌اپ</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+"""
+
+file_path = "/mnt/data/karta_bazargani_seo_page.html"
+try:
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(html_content)
+    print(f"Output: فایل HTML با موفقیت ایجاد شد و در مسیر {file_path} ذخیره گردید.")
+except Exception as e:
+    print(f"Output: خطا در نوشتن فایل: {e}")
+
+print(f"\nTo help user access the file results, include the file path in the output like sandbox:/mnt/data/...")
+print(f"For images you can output them in markdown like ![alt text][sandbox:/mnt/data/...] (don't forget the exclamation mark)\n")

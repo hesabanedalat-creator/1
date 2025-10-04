@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>وکیل فوق تخصصی حقوق خصوصی | مرجع تخصصی دعاوی ملکی، ارث، وصیت و عقود مدنی با بالاترین نرخ موفقیت</title>
+    <meta name="description" content="تخصصی‌ترین خدمات حقوقی در دعاوی پیچیده حقوق مدنی شامل: خلع ید، الزام به تنظیم سند، ابطال مبایعه‌نامه، تقسیم اموال مشاع، انحصار وراثت و دعاوی مربوط به عقود با تکیه بر تسلط کامل بر قوانین ماهوی و شکلی.">
+    <meta name="keywords" content="وکیل ملکی درجه یک، دعاوی پیچیده حقوقی، قانون مدنی، آیین دادرسی مدنی، پرونده‌های ارث و وصیت، سئوی حقوقی، مشاوره تخصصی آنلاین">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap');
+        body { font-family: 'Vazirmatn', Tahoma, sans-serif; line-height: 2.4; color: #2c3e50; margin: 0; background-color: #f8f9fa; }
+        header { background: #1a237e; padding: 18px 5%; color: white; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); }
+        nav a { margin-left: 30px; text-decoration: none; color: #bbdefb; font-weight: 600; transition: color 0.2s; font-size: 1.1em;}
+        nav a:hover { color: #ffffff; border-bottom: 2px solid #ffc107; }
+        main { padding: 0 5%; }
+        
+        /* --- بنر اصلی حرفه‌ای --- */
+        #private-banner { 
+            background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%); 
+            padding: 120px 40px; text-align: center; border-radius: 15px; margin-top: 35px; margin-bottom: 60px; 
+            color: white; box-shadow: 0 20px 40px rgba(26, 35, 126, 0.4); border-right: 8px solid #ffc107;
+        }
+        #private-banner h1 { font-size: 3.5em; margin-bottom: 20px; font-weight: 900; text-shadow: 3px 3px 8px rgba(0,0,0,0.4); }
+        .banner-lead { font-size: 1.5em; color: #e0e7ff; }
+        .cta-button { display: inline-block; background: #ff9800; color: #333; padding: 18px 45px; border-radius: 60px; margin-top: 30px; font-size: 1.4em; font-weight: 900; text-decoration: none; transition: background 0.3s, transform 0.3s; box-shadow: 0 8px 20px rgba(255, 152, 0, 0.5); }
+        .cta-button:hover { background: #f57c00; transform: translateY(-3px); }
+
+        h2 { border-bottom: 4px solid #ffc107; padding-bottom: 12px; margin-top: 60px; color: #1a237e; font-size: 2.5em; font-weight: 700; }
+        
+        /* --- بخش خدمات با گرید گسترده --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #42a5f5;
+            transition: transform 0.4s, box-shadow 0.4s;
+            text-align: right;
+        }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18); border-top-color: #1e88e5; }
+        .service-card h3 { color: #1e88e5; font-size: 1.7em; margin-top: 0; margin-bottom: 15px;}
+        .service-card i { font-size: 2.5em; color: #2196F3; margin-bottom: 18px; float: right; margin-left: 15px;}
+
+        /* --- مقالات و قوانین (عمق بیشتر) --- */
+        .law-section { background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); margin-bottom: 60px;}
+        .law-articles-list { display: flex; flex-wrap: wrap; justify-content: space-between; }
+        .article-item { width: 48%; margin-bottom: 25px; border-left: 3px solid #e0e0e0; padding-left: 15px; }
+        .article-item h4 { color: #303f9f; font-size: 1.3em; margin-top: 0; margin-bottom: 8px; }
+        .article-item p { font-size: 0.95em; color: #555; }
+
+        /* --- فرم تماس حرفه‌ای --- */
+        #contact-form { 
+            background: linear-gradient(to right, #e3f2fd, #ffffff); padding: 60px; border-radius: 15px; margin: 70px 0; border: 4px solid #1976d2; 
+            text-align: center; box-shadow: 0 15px 35px rgba(25, 118, 210, 0.4); 
+        }
+        #contact-form h2 { color: #1976d2; border-bottom-color: #42a5f5; }
+        .contact-form-container input[type="text"], .contact-form-container input[type="tel"] {
+            width: 100%; padding: 18px; margin: 15px 0; border: 2px solid #90caf9; border-radius: 10px; box-sizing: border-box; font-size: 1.15em; text-align: right;
+        }
+        #submit-btn {
+            background-color: #ef5350; color: white; padding: 20px 50px; border: none; border-radius: 10px; cursor: pointer; font-size: 1.5em; font-weight: 900; margin-top: 30px; transition: background-color 0.3s, transform 0.2s;
+        }
+        #submit-btn:hover { background-color: #d32f2f; transform: scale(1.02); }
+        .contact-info a { color: #1e88e5; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 1.1em; }
+        .contact-info a:hover { color: #0d47a1; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">صفحه اصلی</a>
+            <a href="#">امور مالیاتی</a>
+            <a href="#">حقوق کیفری</a>
+            <a href="#">امور قراردادها</a>
+            <a href="#contact-form" style="color: #ffc107; border: 1px solid #ffc107; padding: 6px 15px; border-radius: 5px;">مشاوره فوری خصوصی</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- بنر اصلی فوق تخصصی -->
+        <section id="private-banner">
+            <h1>اقتدار حقوقی در دعاوی پیچیده مالکیت و ترکه</h1>
+            <p class="banner-lead">از پیچیدگی‌های اثبات مالکیت تا اجرای احکام ارث؛ ما با اشراف کامل بر آیین دادرسی و قانون مدنی، مسیر پیروزی شما را هموار می‌کنیم.</p>
+            <a href="#contact-form" class="cta-button"><i class="fas fa-headset"></i> ارتباط مستقیم و تخصصی از طریق واتساپ</a>
+        </section>
+
+        <!-- خدمات تخصصی تفکیک شده -->
+        <h2>حوزه‌های تخصصی تمرکز در حقوق مدنی</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>دعاوی املاک و مستغلات</h3>
+                <p>خلع ید، رفع مزاحمت، ابطال سند رهنی، ابطال مبایعه‌نامه، تنظیم سند رسمی، افراز و تقسیم مال مشاع.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-book-open-reader"></i>
+                <h3>ارث، موصی‌به و حجر</h3>
+                <p>تنظیم دادخواست انحصار وراثت، اعتراض به گواهی حصر، تعیین سهم‌الارث و ابطال وصیت‌نامه‌های غیرقانونی.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-signature"></i>
+                <h3>تعهدات و قراردادها (ماهوی)</h3>
+                <p>بررسی اعتبار عقود، فسخ قرارداد، خیارات قانونی، مطالبه وجه و مطالبه اجرت‌المثل.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gavel"></i>
+                <h3>قواعد شکلی دادرسی</h3>
+                <p>تنظیم لوایح دقیق، پاسخ به دادخواست، اعتراض به قرارهای دادگاه و اجرای کامل احکام قطعی مدنی.</p>
+            </div>
+        </div>
+        
+        <!-- محتوای عمیق: ماهوی و شکلی -->
+        <h2>دانش حقوقی گسترده: قوانین ماهوی و رویه‌های شکلی</h2>
+        <div class="law-section">
+            <h3>مطالعه عمیق حقوق ماهوی (قانون مدنی)</h3>
+            <div class="law-articles-list">
+                <div class="article-item">
+                    <h4>اثر بطلان بیع فضولی در املاک دارای سند رسمی</h4>
+                    <p>تحلیل ماده ۲۵۷ قانون مدنی و نحوه استرداد ملک در صورت اثبات فضولی بودن معامله.</p>
+                </div>
+                <div class="article-item">
+                    <h4>آثار شرط فاسخ در قراردادهای بیع لازم‌الاجرا</h4>
+                    <p>بررسی شروطی که طرفین می‌توانند با تحقق آن‌ها، قرارداد را به صورت یک‌طرفه منفسخ نمایند.</p>
+                </div>
+                <div class="article-item">
+                    <h4>تقسیم اموال مشاع: تفاوت دعوای افراز و تقسیم</h4>
+                    <p>بررسی شرایط اقامه دعوای افراز و مواردی که دادگاه صرفاً حکم به تقسیم می‌دهد.</p>
+                </div>
+                <div class="article-item">
+                    <h4>مستثنیات دین در اجرای احکام مدنی</h4>
+                    <p>تفسیر رویه قضایی در خصوص مستثنیات دین و تأمین معیشت محکوم علیه.</p>
+                </div>
+            </div>
+
+            <h3>رویه‌های قضایی و آیین دادرسی مدنی</h3>
+            <div class="law-articles-list">
+                <div class="article-item">
+                    <h4>نقش دستور موقت در توقیف اموال قبل از صدور حکم نهایی</h4>
+                    <p>شرایط پذیرش درخواست صدور دستور موقت توسط دادگاه و میزان خسارات احتمالی.</p>
+                </div>
+                <div class="article-item">
+                    <h4>فرصت‌های تجدیدنظرخواهی در دعاوی ملکی</h4>
+                    <p>بررسی مهلت‌ها و جهات تجدیدنظرخواهی در آراء صادره از محاکم بدوی حقوقی.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- فرم تماس حرفه‌ای (کاملاً تقویت شده) -->
+        <section id="contact-form">
+            <h2>با وکیل پرونده خود مستقیماً صحبت کنید</h2>
+            <p>ما متعهد به شفافیت و ارائه راهکار عملی هستیم. پرونده شما در دست متخصصینی است که به قوانین مسلط‌اند.</p>
+            
+            <div class="contact-form-container">
+                <form onsubmit="alert('پیام شما به تیم تخصصی حقوق خصوصی ارسال شد. در کمتر از ۳۰ دقیقه با شما تماس خواهیم گرفت.'); return false;">
+                    <input type="text" name="name" placeholder="نام کامل مراجع کننده" required>
+                    <input type="tel" name="mobile" placeholder="شماره موبایل (لطفاً فعال در واتساپ باشد)" required>
+                    <textarea name="case_detail" placeholder="شرح مختصر اما دقیق از موضوع اصلی (مثلاً: دعوای خلع ید از پلاک ثبتی x)" rows="4" required></textarea>
+                    
+                    <button type="submit" id="submit-btn">
+                        <i class="fas fa-paper-plane"></i> ارسال درخواست مشاوره تخصصی فوری
+                    </button>
+                </form>
+                <div class="contact-info" style="margin-top: 25px;">
+                    <p>ارتباط سریع و مستقیم در تمام روزهای هفته:</p>
+                    <a href="https://wa.me/989120000000" target="_blank" style="background: #25d366; color: white; padding: 10px 20px; border-radius: 30px;"><i class="fab fa-whatsapp"></i> مشاوره واتساپ (۲۴ ساعته)</a> | 
+                    <a href="tel:+989120000000" style="background: #2196F3; color: white; padding: 10px 20px; border-radius: 30px;"><i class="fas fa-phone-alt"></i> تماس تلفنی (رسمی)</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; background: #1a237e; color: #bbdefb; margin-top: 30px;">&copy; ۱۴۰۴ دفتر حقوقی تخصصی - متعهد به تسلط بر حقوق خصوصی و رویه‌های مدنی.</p>
+    </footer>
+
+</body>
+</html>

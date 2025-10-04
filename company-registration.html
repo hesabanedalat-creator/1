@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>سامانه تخصصی ثبت، تغییرات و انحلال شرکت‌ها | خدمات حقوقی و ثبتی</title>
+    <meta name="description" content="مرکز جامع خدمات ثبت شرکت، تغییرات، انحلال، اخذ کد اقتصادی و کد بیمه. تیم حقوقی ما فرآیند اداری ثبت کسب‌وکار شما را سریع و تضمینی انجام می‌دهد.">
+    <meta name="keywords" content="ثبت شرکت، ثبت موسسه، تغییرات شرکت، انحلال شرکت، کد اقتصادی، کد بیمه، وکیل ثبت شرکت">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- لینک Font Awesome برای آیکون‌های حرفه‌ای‌تر -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> <!-- لینک فایل CSS اصلی شما -->
+
+    <style>
+        /* استایل‌های داخلی برای بهبود ظاهر تا زمان آماده شدن CSS اصلی */
+        body { font-family: Tahoma, sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #f9f9f9; }
+        header { background: #fff; border-bottom: 1px solid #eee; padding: 15px 5%; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        nav a { margin-left: 25px; text-decoration: none; color: #0056b3; font-weight: bold; transition: color 0.2s; }
+        nav a:hover { color: #003366; }
+        main { padding: 0 5%; }
+        
+        /* بخش بنر اصلی - تمرکز بر CTA */
+        #registration-banner { background: linear-gradient(135deg, #004e92 0%, #1976d2 100%); padding: 80px 40px; text-align: center; border-radius: 10px; margin-bottom: 40px; color: white; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); }
+        #registration-banner h1 { font-size: 2.5em; margin-bottom: 15px; }
+        .lead { font-size: 1.3em; margin-bottom: 35px; color: #e0e0ff; }
+
+        /* بخش خدمات */
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .service-card { background: #fff; padding: 30px; border-radius: 8px; text-align: right; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); border-top: 5px solid #ffc107; transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
+        .service-card i { font-size: 2em; color: #ff9800; margin-bottom: 15px; }
+        .service-card h3 { color: #cc8800; margin-top: 0; }
+        
+        /* بخش مراحل شماره‌دار */
+        section h2 { border-bottom: 4px solid #2196f3; padding-bottom: 12px; margin-top: 40px; color: #003366; font-size: 2em; }
+        .numbered-step { display: flex; align-items: flex-start; margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .step-number { 
+            width: 50px; height: 50px; min-width: 50px; border-radius: 50%; background-color: #2196f3; color: white; 
+            font-size: 1.5em; font-weight: bold; display: flex; justify-content: center; align-items: center; 
+            margin-left: 20px; flex-shrink: 0; border: 3px solid #fff; box-shadow: 0 0 0 2px #007bff;
+        }
+        .step-content h3 { color: #0056b3; margin-top: 0; }
+
+        /* فرم تماس قوی (Lead Capture Form) */
+        #lead-capture-form { background: #e8f0fe; padding: 50px; border-radius: 10px; margin: 50px 0; text-align: center; border: 2px solid #42a5f5; }
+        #lead-capture-form h2 { color: #1a237e; margin-bottom: 15px; }
+        .contact-form-container { max-width: 500px; margin: 0 auto; }
+        .contact-form-container input[type="text"], 
+        .contact-form-container input[type="tel"] {
+            width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-sizing: border-box;
+        }
+        .contact-form-container button {
+            width: 100%; padding: 15px; background-color: #ff9800; color: white; border: none; border-radius: 5px; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: background-color 0.3s;
+        }
+        .contact-form-container button:hover { background-color: #f57c00; }
+        .note { color: #d32f2f; margin-top: 10px; font-size: 0.9em; }
+
+        footer { background: #333; color: #ccc; text-align: center; padding: 20px 0; margin-top: 40px; font-size: 0.9em; }
+        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. هدر و ناوبری -->
+    <header>
+        <nav>
+            <a href="index.html">صفحه اصلی</a>
+            <a href="permits.html">صلاحیت پیمانکاران</a>
+            <a href="#services-section">خدمات اصلی</a>
+            <a href="#steps-section">فرآیند کار</a>
+            <a href="#lead-capture-form" style="color: #e91e63; border: 1px solid #e91e63; padding: 5px 10px; border-radius: 5px;">درخواست فوری</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. بخش اصلی و تگ H1 - فوکوس بر ثبت شرکت -->
+        <section id="registration-banner">
+            <h1>تأسیس و ثبت شرکت شما: از ایده تا ثبت نهایی در کمترین زمان</h1>
+            <p class="lead">خدمات تخصصی و صفر تا صد ثبت انواع شرکت (سهامی خاص، مسئولیت محدود، تضامنی) و تغییرات قانونی با پشتیبانی حقوقی کامل.</p>
+            
+            <!-- دکمه CTA سریع در بالای صفحه -->
+            <a href="#lead-capture-form" class="cta-button phone-btn" style="background-color: #ff5722; color: white; text-decoration: none;">
+                <i class="fas fa-clipboard-list"></i> شروع فرآیند ثبت شرکت
+            </a>
+        </section>
+
+        <!-- 3. بخش خدمات اصلی (Grid) -->
+        <section id="services-section">
+            <h2>خدمات جامع ثبت و تغییرات شرکت</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>ثبت اولیه شرکت</h3>
+                    <p>ثبت انواع شرکت‌ها، تنظیم دقیق اساسنامه و صورت‌جلسات اولیه با رعایت کامل قوانین تجارت.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-edit"></i>
+                    <h3>تغییرات شرکت‌ها</h3>
+                    <p>تغییر آدرس، مدیران، سرمایه، موضوع فعالیت و هرگونه اصلاحات قانونی از طریق تنظیم صورت‌جلسات.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-times-circle"></i>
+                    <h3>انحلال و تصفیه</h3>
+                    <p>انجام کلیه مراحل قانونی انحلال شرکت، تعیین تکلیف دارایی‌ها و اخذ پلمپ‌های مربوطه.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-id-badge"></i>
+                    <h3>اخذ کد اقتصادی و بیمه</h3>
+                    <p>پیگیری سریع و اخذ کد اقتصادی، کد کارگاهی سازمان تأمین اجتماعی و دفاتر پلمپ.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. فرآیند گام به گام (با شماره‌گذاری قوی) -->
+        <section id="steps-section">
+            <h2>فرآیند ما: ثبت شفاف و بدون دردسر</h2>
+            <p>ما فرآیند ثبت را به مراحل مشخص تقسیم کرده‌ایم تا از پیشرفت کار خود کاملاً مطلع باشید.</p>
+
+            <div class="numbered-step">
+                <div class="step-number">۱</div>
+                <div class="step-content">
+                    <h3>مشاوره اولیه و تعیین ساختار</h3>
+                    <p>بررسی اهداف کسب‌وکار شما و پیشنهاد بهترین نوع شرکت (سهامی خاص یا مسئولیت محدود) و تنظیم دقیق نام و حوزه فعالیت.</p>
+                </div>
+            </div>
+            <div class="numbered-step">
+                <div class="step-number">۲</div>
+                <div class="step-content">
+                    <h3>تنظیم و جمع‌آوری اسناد</h3>
+                    <p>تنظیم پیش‌نویس اساسنامه، اظهارنامه و صورت‌جلسات اولیه توسط کارشناسان حقوقی ما. تکمیل مدارک شناسایی اعضا.</p>
+                </div>
+            </div>
+            <div class="numbered-step">
+                <div class="step-number">۳</div>
+                <div class="step-content">
+                    <h3>ارسال به اداره ثبت و پیگیری</h3>
+                    <p>ارسال الکترونیکی مدارک به سامانه اداره ثبت شرکت‌ها و پیگیری روزانه تا دریافت استعلامات و تأییدیه‌ها.</p>
+                </div>
+            </div>
+            <div class="numbered-step">
+                <div class="step-number">۴</div>
+                <div class="step-content">
+                    <h3>اخذ شماره ثبت و آگهی</h3>
+                    <p>پس از تأیید نهایی، دریافت شماره ثبت شرکت و ارسال برای چاپ آگهی رسمی در روزنامه کثیرالانتشار.</p>
+                </div>
+            </div>
+            <div class="numbered-step">
+                <div class="step-number">۵</div>
+                <div class="step-content">
+                    <h3>تکمیل مراحل تکمیلی</h3>
+                    <p>انجام امور پس از ثبت: اخذ کد اقتصادی، افتتاح حساب بانکی (در صورت نیاز) و اخذ مجوزهای تکمیلی.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. فرم جذب مشتری (Lead Capture Form) - قوی‌ترین بخش -->
+        <section id="lead-capture-form">
+            <h2>فرم درخواست مشاوره تخصصی و دریافت شماره</h2>
+            <p>فقط کافیست شماره موبایل خود را وارد کنید تا در کمتر از ۱۰ دقیقه، مشاور ما برای بررسی مدارک با شما تماس بگیرد.</p>
+            
+            <div class="contact-form-container">
+                <form onsubmit="alert('اطلاعات شما با موفقیت ثبت شد. مشاور ما به زودی تماس خواهد گرفت.'); return false;">
+                    <!-- فیلد شماره موبایل اجباری است -->
+                    <input type="tel" name="mobile" placeholder="شماره موبایل (الزامی) - 09..." required>
+                    <!-- فیلد کمکی برای نوع خدمات -->
+                    <input type="text" name="service_type" value="ثبت شرکت" hidden>
+                    
+                    <button type="submit">
+                        <i class="fas fa-handshake"></i> ارسال درخواست و دریافت تماس فوری
+                    </button>
+                </form>
+                <p class="note">ما به حریم خصوصی شما احترام می‌گذاریم. شماره شما فقط برای تماس در خصوص خدمات ثبت استفاده خواهد شد.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. فوتر -->
+    <footer>
+        <p>&copy; ۱۴۰۴ تمامی حقوق متعلق به سامانه جامع خدمات ثبتی است.</p>
+        <div class="footer-links">
+            <a href="index.html">خانه</a> | 
+            <a href="permits.html">صلاحیت پیمانکاران</a> | 
+            <a href="#">پشتیبانی ۲۴ ساعته</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
