@@ -91,29 +91,66 @@
             border-radius: 8px;
             margin-top: 30px;
         }
-        .call-action button {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            padding: 12px 25px;
+        .call-action h2 {
+            justify-content: center;
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+        .call-action p {
+            margin-bottom: 25px;
+        }
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%; /* Adjusted for better fit within 600px */
+            max-width: 300px;
+            padding: 12px 20px;
             border-radius: 5px;
             font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            margin: 0 auto;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none; /* For anchor tags */
+            color: #fff; /* For anchor tags */
+            box-sizing: border-box;
         }
-        .call-action button:hover {
+        .contact-button i {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+        .direct-call {
+            background-color: #007bff;
+        }
+        .direct-call:hover {
+            background-color: #0056b3;
+        }
+        .whatsapp-chat {
+            background-color: #28a745;
+        }
+        .whatsapp-chat:hover {
             background-color: #218838;
         }
-        .call-action button i {
-            margin-left: 10px;
+        .get-number {
+            background-color: #6c757d;
+            border: none;
         }
+        .get-number:hover {
+            background-color: #5a6268;
+        }
+
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 1000; /* High z-index to ensure it's on top */
             left: 0;
             top: 0;
             width: 100%;
@@ -133,6 +170,7 @@
             border-radius: 8px;
             text-align: center;
             position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .close-button {
             color: #aaa;
@@ -158,6 +196,7 @@
             border-radius: 4px;
             font-size: 1em;
             text-align: center;
+            direction: ltr; /* Ensure numbers are entered LTR */
         }
         .modal-content button {
             background-color: #007bff;
@@ -167,6 +206,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 1em;
+            transition: background-color 0.3s ease;
         }
         .modal-content button:hover {
             background-color: #0056b3;
@@ -183,9 +223,12 @@
             h2 {
                 font-size: 1.3em;
             }
-            .call-action button {
-                padding: 10px 20px;
-                font-size: 1em;
+            .contact-button {
+                width: 90%;
+            }
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
             }
         }
     </style>
@@ -198,29 +241,32 @@
 
         <section>
             <h2><i class="fa-solid fa-circle-info"></i> معرفی سامانه جامع تجارت</h2>
-            <p>سامانه جامع تجارت (National Trade Single Window - NTSW) یک پلتفرم یکپارچه ملی است که با هدف تسهیل، تسریع و شفاف‌سازی فرآیندهای تجاری و بازرگانی کشور راه‌اندازی شده است. این سامانه به عنوان مرجع اصلی برای اطلاعات، قوانین، اخذ مجوزها و انجام کلیه امور مرتبط با تجارت الکترونیکی و بازرگانی عمل می‌کند.</p>
-            <p>این سامانه تمامی ذی‌نفعان حوزه تجارت، از جمله بازرگانان، تولیدکنندگان، واردکنندگان، صادرکنندگان و دستگاه‌های دولتی مرتبط را در یک فضای واحد گرد هم آورده و امکان مدیریت یکپارچه فرآیندها را فراهم می‌آورد.</p>
+            <p>سامانه جامع تجارت (National Trade Single Window - NTSW) یک پلتفرم یکپارچه ملی است که با هدف **تسهیل، تسریع و شفاف‌سازی فرآیندهای تجاری و بازرگانی کشور** راه‌اندازی شده است. این سامانه به عنوان **مرجع جامع و اصلی** برای گردآوری اطلاعات، قوانین، اخذ مجوزها و انجام کلیه امور مرتبط با تجارت الکترونیکی و بازرگانی عمل می‌کند.</p>
+            <p>این سامانه تمامی ذی‌نفعان حوزه تجارت، از جمله بازرگانان، تولیدکنندگان، واردکنندگان، صادرکنندگان و دستگاه‌های دولتی مرتبط را در یک فضای واحد و گسترده گرد هم آورده و امکان مدیریت یکپارچه و بهینه فرآیندها را فراهم می‌آورد. **تمام موارد و گستردگی مربوط به حوزه تجارت** از جمله فیلدهای مجوزها و قوانین مرتبط، در این بستر به صورت جامع ارائه می‌شود.</p>
         </section>
 
         <section>
             <h2><i class="fa-solid fa-gavel"></i> قوانین و مقررات</h2>
-            <p>سامانه جامع تجارت، مخزن جامعی از کلیه قوانین، آیین‌نامه‌ها، بخشنامه‌ها و دستورالعمل‌های مربوط به حوزه تجارت، گمرک، استاندارد، بهداشت و سایر مقررات مرتبط است. کاربران می‌توانند به سادگی به آخرین نسخه‌های قوانین دسترسی داشته و از تغییرات آن‌ها مطلع شوند.</p>
+            <p>سامانه جامع تجارت، مخزن جامعی از کلیه قوانین، آیین‌نامه‌ها، بخشنامه‌ها و دستورالعمل‌های مربوط به حوزه تجارت، گمرک، استاندارد، بهداشت و سایر مقررات مرتبط است. کاربران می‌توانند به سادگی به آخرین نسخه‌های قوانین دسترسی داشته و از تغییرات آن‌ها مطلع شوند. **هر آنچه هست و نیست** در این حوزه، از طریق سامانه قابل پیگیری است.</p>
             <ul>
                 <li><i class="fa-solid fa-balance-scale"></i> قوانین و مقررات تجارت الکترونیکی</li>
                 <li><i class="fa-solid fa-file-contract"></i> آیین‌نامه‌ها و دستورالعمل‌های بازرگانی</li>
                 <li><i class="fa-solid fa-scroll"></i> ضوابط گمرکی و ترخیص کالا</li>
                 <li><i class="fa-solid fa-handshake-angle"></i> معاهدات و توافق‌نامه‌های بین‌المللی</li>
+                <li><i class="fa-solid fa-code-branch"></i> تمامی تبصره‌ها و جزئیات مرتبط</li>
             </ul>
         </section>
 
         <section>
             <h2><i class="fa-solid fa-clipboard-check"></i> مجوزهای تجارت الکترونیکی و بازرگانی</h2>
-            <p>اخذ و مدیریت انواع مجوزهای لازم برای فعالیت‌های تجاری و بازرگانی از طریق این سامانه انجام می‌پذیرد. فرآیند درخواست، بررسی و صدور مجوزها به صورت کاملاً الکترونیکی و با حداقل نیاز به مراجعات حضوری طراحی شده است.</p>
+            <p>اخذ و مدیریت انواع مجوزهای لازم برای فعالیت‌های تجاری و بازرگانی از طریق این سامانه انجام می‌پذیرد. فرآیند درخواست، بررسی و صدور مجوزها به صورت کاملاً الکترونیکی و با حداقل نیاز به مراجعات حضوری طراحی شده است. **تمام فیلدهای مرتبط با مجوزها** به تفصیل در سامانه موجود است.</p>
             <ul>
                 <li><i class="fa-solid fa-id-card"></i> جواز تاسیس و پروانه بهره‌برداری</li>
                 <li><i class="fa-solid fa-truck-fast"></i> مجوزهای واردات و صادرات</li>
                 <li><i class="fa-solid fa-certificate"></i> گواهینامه‌های استاندارد و بهداشت</li>
                 <li><i class="fa-solid fa-shield-alt"></i> مجوزهای فعالیت صنفی و کسب و کار</li>
+                <li><i class="fa-solid fa-hard-hat"></i> پروانه صلاحیت و گواهینامه‌های تخصصی</li>
+                <li><i class="fa-solid fa-building"></i> پروانه پیمانکاری و ساخت و ساز</li>
             </ul>
         </section>
 
@@ -231,15 +277,24 @@
                 <li><i class="fa-solid fa-hospital-user"></i> قوانین و مقررات بیمه تامین اجتماعی</li>
                 <li><i class="fa-solid fa-money-check-dollar"></i> نحوه ارسال لیست و پرداخت حق بیمه</li>
                 <li><i class="fa-solid fa-person-digging"></i> بخشنامه‌های مرتبط با کارفرمایان و کارگران</li>
+                <li><i class="fa-solid fa-file-medical"></i> خدمات درمانی و تعهدات بیمه</li>
             </ul>
         </section>
 
         <div class="call-action">
-            <h2><i class="fa-solid fa-headset"></i> تماس فوری با کارشناس</h2>
-            <p>برای دریافت مشاوره تخصصی و پاسخ به سوالات خود، می‌توانید با کارشناسان ما تماس بگیرید.</p>
-            <button id="openCallModal">
-                <i class="fa-solid fa-phone-volume"></i> گرفتن شماره تماس مشتری
-            </button>
+            <h2><i class="fa-solid fa-headset"></i> راه‌های ارتباطی با کارشناسان</h2>
+            <p>برای دریافت مشاوره تخصصی و پاسخ به سوالات خود، از طریق یکی از راه‌های زیر با ما در ارتباط باشید:</p>
+            <div class="contact-options">
+                <a href="tel:+982112345678" class="contact-button direct-call">
+                    <i class="fa-solid fa-phone-alt"></i> شماره‌گیری از مشتری (تماس مستقیم)
+                </a>
+                <a href="https://wa.me/989123456789" target="_blank" class="contact-button whatsapp-chat">
+                    <i class="fa-brands fa-whatsapp"></i> تماس فوری (چت واتساپ)
+                </a>
+                <button id="openCallModal" class="contact-button get-number">
+                    <i class="fa-solid fa-user-plus"></i> گرفتن شماره تماس مشتری (درخواست تماس)
+                </button>
+            </div>
         </div>
     </div>
 
@@ -282,12 +337,12 @@
             if (submitBtn) {
                 submitBtn.onclick = function() {
                     var phoneNumber = phoneNumberInput.value;
-                    if (phoneNumber && phoneNumber.match(/^[0-9]{11}$/)) {
+                    if (phoneNumber && phoneNumber.match(/^09[0-9]{9}$/)) { /* Ensures 09 format and 11 digits */
                         alert("شماره " + phoneNumber + " با موفقیت ثبت شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.");
                         modal.style.display = "none";
                         phoneNumberInput.value = ''; // Clear the input field
                     } else {
-                        alert("لطفاً یک شماره تلفن معتبر 11 رقمی وارد کنید (مانند 09123456789).");
+                        alert("لطفاً یک شماره تلفن همراه 11 رقمی و معتبر (مانند 09123456789) وارد کنید.");
                     }
                 }
             }
