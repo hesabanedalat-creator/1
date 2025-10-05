@@ -1,184 +1,360 @@
-import os
-
-html_content = """
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راهنمای جامع اخذ کارت بازرگانی | مشاوره تخصصی و سریع</title>
-    <meta name="description" content="راهنمای کامل و به‌روز دریافت کارت بازرگانی حقیقی و حقوقی، شرایط، مدارک مورد نیاز و قوانین جدید. مشاوره تخصصی برای تجارت آسان.">
-    <meta name="keywords" content="کارت بازرگانی، اخذ کارت بازرگانی، شرایط کارت بازرگانی، قوانین کارت بازرگانی، سامانه جامع تجارت، مشاوره بازرگانی">
-    <meta name="robots" content="index, follow">
-    
+    <title>سامانه جامع تجارت (NTSW) | کارت بازرگانی، ترخیص کالا، قوانین بازرگانی و تامین اجتماعی</title>
+    <!-- SEO-friendly description -->
+    <meta name="description" content="مرجع جامع اطلاعات، قوانین و اخذ مجوزهای تجارت الکترونیکی و بازرگانی در ایران. شامل کارت بازرگانی، ترخیص کالا از گمرک، قوانین تامین اجتماعی، و تمامی فیلدهای مجوزهای NTSW.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
-            font-family: Tahoma, sans-serif;
-            line-height: 1.8;
+            font-family: 'Tahoma', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f9;
+            background-color: #f4f7f6;
             color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-y: auto; /* Enable vertical scroll for content */
         }
         .container {
-            max-width: 1100px;
-            margin: 30px auto;
+            max-width: 580px; /* Adjusted for 600px iframe with some padding */
+            margin: 20px auto;
             padding: 20px;
             background-color: #ffffff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box; /* Ensures padding is included in the width */
         }
         header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 4px solid #0056b3;
-            margin-bottom: 30px;
         }
         header h1 {
-            color: #0056b3;
-            font-size: 2.5em;
             margin: 0;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 15px;
-            border-right: 5px solid #28a745;
-            background-color: #e9f7ee;
-            border-radius: 5px;
-        }
-        .section h2 {
-            color: #28a745;
             font-size: 1.8em;
-            border-bottom: 2px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header h1 i {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+        h2 {
+            color: #0056b3;
+            font-size: 1.5em;
+            border-bottom: 2px solid #007bff;
             padding-bottom: 10px;
-            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        h2 i {
+            margin-left: 10px;
+            color: #007bff;
+        }
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
         }
         ul {
-            list-style-type: none;
-            padding-right: 20px;
+            list-style: none;
+            padding: 0;
         }
-        ul li::before {
-            content: "\\2713"; /* Checkmark */
-            color: #28a745;
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
+        ul li {
+            background-color: #e9f7ff;
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-right: 3px solid #007bff;
+            display: flex;
+            align-items: center;
         }
-        .cta-section {
+        ul li i {
+            margin-left: 10px;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+        .call-action {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .call-action h2 {
+            justify-content: center;
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+        .call-action p {
+            margin-bottom: 25px;
+        }
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%; /* Adjusted for better fit within 600px */
+            max-width: 300px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none; /* For anchor tags */
+            color: #fff; /* For anchor tags */
+            box-sizing: border-box;
+        }
+        .contact-button i {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+        .direct-call {
+            background-color: #007bff;
+        }
+        .direct-call:hover {
+            background-color: #0056b3;
+        }
+        .whatsapp-chat {
+            background-color: #28a745;
+        }
+        .whatsapp-chat:hover {
+            background-color: #218838;
+        }
+        .get-number {
+            background-color: #6c757d;
+            border: none;
+        }
+        .get-number:hover {
+            background-color: #5a6268;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000; /* High z-index to ensure it's on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .close-button {
+            color: #aaa;
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-content input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            text-align: center;
+            direction: ltr; /* Ensure numbers are entered LTR */
+        }
+        .modal-content button {
             background-color: #007bff;
             color: white;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-        .cta-section h2 {
-            color: white;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .cta-buttons a {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
             transition: background-color 0.3s ease;
         }
-        .btn-phone {
-            background-color: #ffc107;
-            color: #333;
+        .modal-content button:hover {
+            background-color: #0056b3;
         }
-        .btn-phone:hover {
-            background-color: #e0a800;
-        }
-        .btn-whatsapp {
-            background-color: #28a745;
-            color: white;
-        }
-        .btn-whatsapp:hover {
-            background-color: #218838;
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            .contact-button {
+                width: 90%;
+            }
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
-            <h1>راهنمای جامع اخذ و مدیریت کارت بازرگانی</h1>
-            <p>مرجع کامل اطلاعات، مدارک و قوانین تجارت بین‌المللی</p>
+            <h1><i class="fa-solid fa-landmark"></i> سامانه جامع تجارت (NTSW)</h1>
         </header>
 
-        <div class="section">
-            <h2>کارت بازرگانی چیست و چرا اهمیت دارد؟</h2>
-            <p>کارت بازرگانی مجوزی است که توسط اتاق بازرگانی، صنایع، معادن و کشاورزی ایران صادر می‌شود و به دارندگان آن اجازه می‌دهد تا فعالیت‌های تجاری مربوط به واردات و صادرات کالا را انجام دهند. این کارت، هویت تجاری شرکت شما در عرصه بین‌المللی را تعریف می‌کند.</p>
-            
-            <h3>انواع کارت بازرگانی:</h3>
-            <ul>
-                <li><strong>کارت بازرگانی موقت:</strong> برای اشخاصی که قصد تجارت در مدت زمان محدود دارند.</li>
-                <li><strong>کارت بازرگانی دائم:</strong> برای اشخاص حقیقی یا حقوقی که فعالیت مستمر تجاری دارند.</li>
-                <li><strong>کارت بازرگانی تولیدی:</strong> برای شرکت‌هایی که عمده فعالیت آن‌ها تولید است و واردات مواد اولیه دارند.</li>
-            </ul>
-        </div>
+        <section>
+            <h2><i class="fa-solid fa-circle-info"></i> معرفی سامانه جامع تجارت</h2>
+            <p>سامانه جامع تجارت (National Trade Single Window - NTSW) یک پلتفرم یکپارچه ملی است که با هدف **تسهیل، تسریع و شفاف‌سازی فرآیندهای تجاری و بازرگانی کشور** راه‌اندازی شده است. این سامانه به عنوان **مرجع جامع و اصلی اطلاعات، قوانین و اخذ مجوزهای تجارت الکترونیکی و بازرگانی و تمام موارد این حوزه** عمل می‌کند.</p>
+            <p>از جمله پوشش‌های اصلی این سامانه می‌توان به **کارت بازرگانی، قوانین بازرگانی، ترخیص کالا از گمرک** و سایر امور مرتبط اشاره کرد. NTSW تمامی ذی‌نفعان حوزه تجارت را در یک فضای واحد گرد هم آورده و امکان مدیریت یکپارچه و بهینه فرآیندها را فراهم می‌آورد. **تمام موارد و گستردگی مربوط به حوزه تجارت** از جمله فیلدهای دقیق مجوزها و کلیه قوانین مرتبط، در این بستر به صورت جامع ارائه می‌شود و **هرچی هست و نیست** در این حوزه را پوشش می‌دهد.</p>
+        </section>
 
-        <div class="section">
-            <h2>مراحل کلیدی اخذ کارت بازرگانی (حقیقی و حقوقی)</h2>
-            <p>روند اخذ کارت بازرگانی شامل چند مرحله کلیدی در سامانه جامع تجارت (NTSW) و اتاق بازرگانی است. دقت در ارائه مدارک الزامی است:</p>
-            <ol>
-                <li><strong>ثبت‌نام در سامانه جامع تجارت:</strong> اولین قدم، احراز هویت و تکمیل اطلاعات در پورتال مربوطه است.</li>
-                <li><strong>تکمیل پرونده و ارائه مدارک:</strong> ارائه مدارک هویتی، اساسنامه (برای حقوقی)، جواز کسب (در صورت نیاز)، و گواهی عدم سوء پیشینه.</li>
-                <li><strong>بازرسی و تأیید صلاحیت:</strong> بررسی مدارک توسط کارشناسان اتاق بازرگانی.</li>
-                <li><strong>پرداخت هزینه‌ها و صدور کارت:</strong> پس از تأیید نهایی، کارت صادر و قابل استفاده خواهد بود.</li>
-            </ol>
-        </div>
-        
-        <div class="section">
-            <h2>قوانین جامع و نکات مهم در استفاده از کارت بازرگانی</h2>
-            <p>رعایت قوانین زیر برای جلوگیری از ابطال کارت و جرایم تجاری ضروری است:</p>
+        <section>
+            <h2><i class="fa-solid fa-gavel"></i> قوانین و مقررات جامع بازرگانی</h2>
+            <p>سامانه جامع تجارت، مخزن جامعی از کلیه قوانین، آیین‌نامه‌ها، بخشنامه‌ها و دستورالعمل‌های مربوط به حوزه تجارت، گمرک، استاندارد، بهداشت و سایر مقررات مرتبط است. کاربران می‌توانند به سادگی به آخرین نسخه‌های قوانین دسترسی داشته و از تغییرات آن‌ها مطلع شوند. **هر آنچه هست و نیست** در این حوزه، از طریق سامانه قابل پیگیری است و شامل تمامی جزئیات و تبصره‌ها می‌شود.</p>
             <ul>
-                <li><strong>حداقل سرمایه:</strong> در مورد اشخاص حقوقی، سرمایه ثبت شده شرکت باید مطابق با قوانین جاری باشد.</li>
-                <li><strong>عدم فعالیت یا سوءاستفاده:</strong> استفاده از کارت برای مقاصد غیرتجاری یا واگذاری آن به اشخاص ثالث به شدت ممنوع است.</li>
-                <li><strong>تعهدات مالیاتی:</strong> کلیه امور مالیاتی و گمرکی مرتبط با فعالیت‌های تجاری باید به درستی انجام پذیرد.</li>
-                <li><strong>زمان اعتبار:</strong> کارت‌های بازرگانی دارای تاریخ انقضا هستند و باید در موعد مقرر تمدید شوند.</li>
+                <li><i class="fa-solid fa-balance-scale"></i> قوانین و مقررات عمومی تجارت و بازرگانی</li>
+                <li><i class="fa-solid fa-file-contract"></i> آیین‌نامه‌ها و دستورالعمل‌های واردات و صادرات</li>
+                <li><i class="fa-solid fa-file-invoice"></i> ضوابط گمرکی و مقررات ترخیص کالا از گمرک</li>
+                <li><i class="fa-solid fa-address-card"></i> قوانین و مقررات مرتبط با اخذ و تمدید کارت بازرگانی</li>
+                <li><i class="fa-solid fa-scroll"></i> معاهدات و توافق‌نامه‌های تجاری بین‌المللی</li>
+                <li><i class="fa-solid fa-code-branch"></i> تمامی تبصره‌ها و جزئیات قانونی مرتبط با کسب و کار</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>مقالات و منابع مرتبط (بهینه‌سازی سئو)</h2>
-            <p>برای اطلاعات عمیق‌تر، می‌توانید مقالات زیر را مطالعه کنید (لینک‌های داخلی فرضی):</p>
+        <section>
+            <h2><i class="fa-solid fa-clipboard-check"></i> مجوزهای تجارت و فیلدهای سامانه</h2>
+            <p>اخذ و مدیریت انواع مجوزهای لازم برای فعالیت‌های تجاری و بازرگانی از طریق این سامانه انجام می‌پذیرد. فرآیند درخواست، بررسی و صدور مجوزها به صورت کاملاً الکترونیکی و با حداقل نیاز به مراجعات حضوری طراحی شده است. **تمام فیلدهای مرتبط با مجوزها و هرچی قوانین دارد و هرچی هست و نیست** به تفصیل در سامانه موجود است.</p>
             <ul>
-                <li>تفاوت کارت بازرگانی حقیقی و حقوقی: بررسی جامع.</li>
-                <li>مدارک لازم برای تمدید کارت بازرگانی در سال جاری.</li>
-                <li>صفر تا صد فرآیند واردات با کارت بازرگانی.</li>
+                <li><i class="fa-solid fa-id-card"></i> کارت بازرگانی (اخذ، تمدید، تغییرات)</li>
+                <li><i class="fa-solid fa-industry"></i> جواز تاسیس و پروانه بهره‌برداری صنعتی</li>
+                <li><i class="fa-solid fa-truck-fast"></i> مجوزهای واردات و صادرات (ثبت سفارش)</li>
+                <li><i class="fa-solid fa-certificate"></i> گواهینامه‌های استاندارد و بهداشت (صادرات و واردات)</li>
+                <li><i class="fa-solid fa-shield-alt"></i> مجوزهای فعالیت صنفی و کسب و کار</li>
+                <li><i class="fa-solid fa-hard-hat"></i> پروانه صلاحیت و گواهینامه‌های تخصصی</li>
+                <li><i class="fa-solid fa-building"></i> پروانه پیمانکاری و مجوزهای مرتبط با ساخت و ساز</li>
+                <li><i class="fa-solid fa-list-check"></i> تمامی فیلدهای الزامی برای تکمیل فرآیند مجوز</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="cta-section">
-            <h2>برای مشاوره تخصصی و اخذ سریع کارت بازرگانی تماس بگیرید</h2>
-            <p>اگر در مراحل اخذ کارت بازرگانی نیاز به راهنمایی تخصصی و صفر تا صد دارید، کارشناسان ما آماده پاسخگویی هستند.</p>
-            <div class="cta-buttons">
-                <!-- شماره تلفن فرضی: 02188880000 -->
-                <a href="tel:02188880000" class="btn-phone">تلفن مستقیم (کلیک کنید)</a>
-                <!-- شماره واتس‌اپ فرضی: +989351112233 -->
-                <a href="https://wa.me/989351112233?text=درخواست مشاوره کارت بازرگانی" class="btn-whatsapp">ارتباط از طریق واتس‌اپ</a>
+        <section>
+            <h2><i class="fa-solid fa-users"></i> تامین اجتماعی و الزامات آن</h2>
+            <p>اطلاعات و خدمات مرتبط با بیمه تامین اجتماعی برای فعالان اقتصادی و کارفرمایان از جمله نکات مهم در حوزه تجارت و کسب و کار است. آگاهی از قوانین بیمه، ثبت نام کارگاه، ارسال لیست بیمه کارکنان و استفاده از مزایای بیمه‌ای برای تمامی کسب و کارها ضروری می‌باشد.</p>
+            <ul>
+                <li><i class="fa-solid fa-hospital-user"></i> قوانین و مقررات بیمه تامین اجتماعی (ماده ۱۴۸ قانون کار)</li>
+                <li><i class="fa-solid fa-money-check-dollar"></i> نحوه ارسال لیست بیمه و پرداخت حق بیمه آنلاین</li>
+                <li><i class="fa-solid fa-person-digging"></i> بخشنامه‌های مرتبط با کارفرمایان و کارگران</li>
+                <li><i class="fa-solid fa-file-medical"></i> خدمات درمانی، بازنشستگی و تعهدات بیمه</li>
+                <li><i class="fa-solid fa-address-book"></i> سامانه اینترنتی تامین اجتماعی برای کارفرمایان</li>
+            </ul>
+        </section>
+
+        <div class="call-action">
+            <h2><i class="fa-solid fa-headset"></i> راه‌های ارتباطی با کارشناسان</h2>
+            <p>برای دریافت مشاوره تخصصی و پاسخ به سوالات خود در رابطه با سامانه جامع تجارت، کارت بازرگانی، ترخیص کالا و تامین اجتماعی، از طریق یکی از راه‌های زیر با ما در ارتباط باشید:</p>
+            <div class="contact-options">
+                <a href="tel:+982112345678" class="contact-button direct-call">
+                    <i class="fa-solid fa-phone-alt"></i> تماس با کارشناس (شماره تماس: ۰۲۱-۱۲۳۴۵۶۷۸)
+                </a>
+                <a href="https://wa.me/989123456789" target="_blank" class="contact-button whatsapp-chat">
+                    <i class="fa-brands fa-whatsapp"></i> چت واتساپ (شماره: ۰۹۱۲۳۴۵۶۷۸۹)
+                </a>
+                <button id="openCallModal" class="contact-button get-number">
+                    <i class="fa-solid fa-user-plus"></i> درخواست تماس (ثبت شماره مشتری)
+                </button>
             </div>
         </div>
-
     </div>
 
+    <!-- The Modal -->
+    <div id="callModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>درخواست تماس با کارشناس</h3>
+            <p>لطفاً شماره تماس خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند.</p>
+            <input type="tel" id="customerPhoneNumber" placeholder="مثال: 09123456789" pattern="09[0-9]{9}" required>
+            <button id="submitPhoneNumber">ارسال درخواست</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("callModal");
+            var btn = document.getElementById("openCallModal");
+            var span = document.getElementsByClassName("close-button")[0];
+            var submitBtn = document.getElementById("submitPhoneNumber");
+            var phoneNumberInput = document.getElementById("customerPhoneNumber");
+
+            if (btn) {
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+            }
+            if (span) {
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            }
+            if (window) {
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+            if (submitBtn) {
+                submitBtn.onclick = function() {
+                    var phoneNumber = phoneNumberInput.value;
+                    // Basic validation for 11 digits starting with 09
+                    if (phoneNumber && phoneNumber.match(/^09\d{9}$/)) {
+                        alert("شماره " + phoneNumber + " با موفقیت ثبت شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.");
+                        modal.style.display = "none";
+                        phoneNumberInput.value = ''; // Clear the input field
+                    } else {
+                        alert("لطفاً یک شماره تلفن همراه ۱۱ رقمی و معتبر (مانند ۰۹۱xxxxxxx) وارد کنید.");
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
-"""
-
-file_path = "/mnt/data/karta_bazargani_seo_page.html"
-try:
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
-    print(f"Output: فایل HTML با موفقیت ایجاد شد و در مسیر {file_path} ذخیره گردید.")
-except Exception as e:
-    print(f"Output: خطا در نوشتن فایل: {e}")
-
-print(f"\nTo help user access the file results, include the file path in the output like sandbox:/mnt/data/...")
-print(f"For images you can output them in markdown like ![alt text][sandbox:/mnt/data/...] (don't forget the exclamation mark)\n")
