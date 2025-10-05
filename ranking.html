@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رتبه‌بندی وزارت کار و قوانین مرتبط</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap'); /* Using Vazirmatn for Farsi support */
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            direction: rtl; /* Right-to-left for Farsi */
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px; /* Adjust for 600px iframe, but allow some content to be wider and scrollable */
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        header {
+            background-color: #1a4d2e; /* Darker green */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .section {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #3d8361; /* Greenish blue */
+            border-bottom: 2px solid #679b9b; /* Tealish */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+        .section h2 i {
+            margin-left: 10px;
+            color: #679b9b;
+        }
+        .section p {
+            margin-bottom: 10px;
+        }
+        .icon-list {
+            list-style: none;
+            padding: 0;
+        }
+        .icon-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .icon-list li i {
+            color: #fca311; /* Orange */
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+        .call-to-action {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 15px;
+            padding: 25px;
+        }
+        .btn {
+            background-color: #4CAF50; /* Green */
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn i {
+            margin-left: 8px;
+            font-size: 1.1em;
+        }
+        .contact-form {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #e8f5e9; /* Light green background */
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1a4d2e;
+            display: flex;
+            align-items: center;
+        }
+        .contact-form label i {
+            margin-left: 8px;
+            color: #1a4d2e;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: right;
+        }
+        .contact-form button {
+            background-color: #fca311; /* Orange */
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-form button i {
+            margin-left: 8px;
+        }
+        .contact-form button:hover {
+            background-color: #e09200;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #1a4d2e;
+            color: #fff;
+            border-radius: 0 0 8px 8px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments for smaller screens (e.g., 600px iframe) */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px auto;
+                padding: 0 10px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .section {
+                padding: 15px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .btn {
+                width: 90%;
+                min-width: unset;
+                padding: 10px 15px;
+                font-size: 0.95em;
+            }
+            .call-to-action {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-award"></i> رتبه‌بندی وزارت کار و قوانین مرتبط</h1>
+            <p>راهنمای جامع برای کارفرمایان و کارگران</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2><i class="fas fa-sitemap"></i> معرفی رتبه‌بندی وزارت کار</h2>
+                <p>سیستم رتبه‌بندی وزارت کار، مکانیزمی است برای ارزیابی و دسته‌بندی شرکت‌ها، موسسات و حتی پیمانکاران بر اساس شاخص‌هایی نظیر توان مالی، تجربه کاری، کیفیت انجام پروژه‌ها، ساختار مدیریتی و نیروی انسانی متخصص.</p>
+                <p>هدف اصلی این رتبه‌بندی، ایجاد شفافیت در بازار کار، افزایش کیفیت خدمات و محصولات، حمایت از حقوق کارگران و تشویق رقابت سالم میان فعالان اقتصادی است.</p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-check-circle"></i> ارزیابی توانمندی‌های فنی و مالی.</li>
+                    <li><i class="fas fa-check-circle"></i> طبقه‌بندی شرکت‌ها بر اساس صلاحیت.</li>
+                    <li><i class="fas fa-check-circle"></i> تسهیل انتخاب پیمانکاران و شرکای تجاری.</li>
+                    <li><i class="fas fa-check-circle"></i> ارتقاء استانداردهای کاری و حرفه‌ای.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-scroll"></i> قوانین و مقررات رتبه‌بندی</h2>
+                <p>رتبه‌بندی شرکت‌ها و افراد حقوقی فعال در حوزه‌های مختلف کاری، بر اساس قوانین و آیین‌نامه‌های مصوب وزارت تعاون، کار و رفاه اجتماعی و سازمان برنامه و بودجه کشور انجام می‌شود. این قوانین، چارچوب‌های لازم برای ارزیابی، صدور و تمدید رتبه را مشخص می‌کنند.</p>
+                <p><strong>برخی از قوانین و آیین‌نامه‌های کلیدی:</strong></p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-book-open"></i> آیین‌نامه اجرایی قانون کار (مرتبط با صلاحیت و رتبه‌بندی).</li>
+                    <li><i class="fas fa-book-open"></i> دستورالعمل‌های سازمان برنامه و بودجه در خصوص رتبه‌بندی پیمانکاران و مشاوران.</li>
+                    <li><i class="fas fa-book-open"></i> مقررات مربوط به حوزه‌های خاص صنعتی و خدماتی.</li>
+                    <li><i class="fas fa-book-open"></i> ضوابط مربوط به ایمنی و بهداشت حرفه‌ای (در ارزیابی صلاحیت).</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-cogs"></i> روند رسیدگی به درخواست رتبه‌بندی</h2>
+                <p>فرآیند درخواست و اخذ رتبه از وزارت کار (یا نهادهای ذی‌ربط مانند سازمان برنامه و بودجه) شامل چندین مرحله است که متقاضیان باید آن‌ها را به دقت طی کنند. این مراحل برای اطمینان از صحت اطلاعات و ارزیابی دقیق صلاحیت‌ها طراحی شده‌اند.</p>
+                <p><strong>مراحل کلی:</strong></p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-file-invoice"></i> ثبت درخواست اولیه و بارگذاری مدارک.</li>
+                    <li><i class="fas fa-clipboard-check"></i> بررسی کارشناسی مدارک ارسالی.</li>
+                    <li><i class="fas fa-chart-line"></i> ارزیابی شاخص‌های مالی و فنی.</li>
+                    <li><i class="fas fa-user-check"></i> بازدید و ارزیابی میدانی (در صورت نیاز).</li>
+                    <li><i class="fas fa-certificate"></i> صدور یا تمدید گواهینامه رتبه.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-folder-open"></i> روند رسیدگی به پرونده‌های اعتراضی و بازنگری</h2>
+                <p>در صورتی که متقاضیان نسبت به رتبه اعطا شده یا هر یک از مراحل فرآیند رتبه‌بندی اعتراض داشته باشند، امکان ارائه درخواست بازنگری و بررسی مجدد پرونده وجود دارد. این فرآیند برای تضمین عدالت و شفافیت طراحی شده است.</p>
+                <p><strong>مراحل رسیدگی به اعتراضات:</strong></p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-exclamation-circle"></i> ثبت اعتراض کتبی به همراه مستندات.</li>
+                    <li><i class="fas fa-search-plus"></i> بررسی مجدد پرونده توسط کمیته تخصصی.</li>
+                    <li><i class="fas fa-comments"></i> امکان ارائه توضیحات و دفاع توسط متقاضی.</li>
+                    <li><i class="fas fa-gavel"></i> صدور رای نهایی توسط مرجع ذی‌صلاح.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-network-wired"></i> گستردگی حوزه رتبه‌بندی</h2>
+                <p>رتبه‌بندی وزارت کار و نهادهای مرتبط، تنها به شرکت‌های پیمانکاری محدود نمی‌شود و حوزه‌های گسترده‌ای را در بر می‌گیرد. این گستردگی به تضمین صلاحیت و کیفیت در سراسر اکوسیستم کاری کشور کمک می‌کند.</p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-industry"></i> شرکت‌های پیمانکاری (ساختمان، آب، راه و ترابری و...).</li>
+                    <li><i class="fas fa-lightbulb"></i> شرکت‌های مشاوره‌ای (مهندسین مشاور، طراحی و...).</li>
+                    <li><i class="fas fa-user-friends"></i> شرکت‌های خدماتی (حفاظت و نگهبانی، تاسیسات و...).</li>
+                    <li><i class="fas fa-code-branch"></i> شرکت‌های انفورماتیک و فناوری اطلاعات.</li>
+                </ul>
+            </section>
+
+            <section class="section call-to-action">
+                <a href="tel:+9821XXXXXXX" class="btn">
+                    <i class="fas fa-phone-alt"></i> تماس فوری با کارشناس
+                </a>
+                <a href="javascript:void(0);" class="btn" onclick="alert('قابلیت شماره گیری از مشتری در حال حاضر شبیه سازی شده است. لطفا برای تماس با کارشناس از دکمه بالا استفاده کنید.');">
+                    <i class="fas fa-user-circle"></i> شماره‌گیری از مشتری
+                </a>
+            </section>
+
+            <section class="section contact-form">
+                <h2><i class="fas fa-mobile-alt"></i> دریافت شماره تماس مشتری</h2>
+                <p>برای دریافت اطلاعات بیشتر یا مشاوره در زمینه رتبه‌بندی وزارت کار، شماره تماس خود را وارد کنید تا کارشناسان ما با شما تماس بگیرند.</p>
+                <form onsubmit="event.preventDefault(); alert('شماره شما با موفقیت دریافت شد. به زودی با شما تماس خواهیم گرفت.');">
+                    <label for="customerName"><i class="fas fa-user"></i> نام و نام خانوادگی:</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="نام خود را وارد کنید" required>
+
+                    <label for="customerPhone"><i class="fas fa-phone"></i> شماره تماس:</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" pattern="[0-9]{11}" placeholder="مثال: 09123456789" required>
+                    <small>لطفا شماره موبایل 11 رقمی خود را وارد نمایید.</small>
+                    <br><br>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> ارسال شماره</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 رتبه‌بندی وزارت کار. تمامی حقوق محفوظ است.</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for basic client-side interactivity.
+        // The "شماره‌گیری از مشتری" button is simulated with an alert.
+        // The form submission is also simulated with an alert.
+        // In a real application, these would involve more complex logic
+        // like making API calls or interacting with a backend system.
+    </script>
+</body>
+</html>

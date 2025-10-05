@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهرداری، قوانین ساخت و ساز و مسکن</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        header {
+            background-color: #3f51b5; /* Deeper blue for municipal theme */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .section {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #1a237e; /* Darker blue for headings */
+            border-bottom: 2px solid #9fa8da; /* Lighter blue/purple */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+        .section h2 i {
+            margin-left: 10px;
+            color: #9fa8da;
+        }
+        .section p {
+            margin-bottom: 10px;
+        }
+        .icon-list {
+            list-style: none;
+            padding: 0;
+        }
+        .icon-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .icon-list li i {
+            color: #ffb300; /* Amber for list icons */
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+        .call-to-action {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 15px;
+            padding: 25px;
+        }
+        .btn {
+            background-color: #4caf50; /* Green */
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #43a047;
+        }
+        .btn i {
+            margin-left: 8px;
+            font-size: 1.1em;
+        }
+        .contact-form {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #e8eaf6; /* Light indigo background */
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1a237e;
+            display: flex;
+            align-items: center;
+        }
+        .contact-form label i {
+            margin-left: 8px;
+            color: #1a237e;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: right;
+        }
+        .contact-form button {
+            background-color: #ffb300; /* Amber */
+            color: #333;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-form button i {
+            margin-left: 8px;
+        }
+        .contact-form button:hover {
+            background-color: #ffa000;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #3f51b5;
+            color: #fff;
+            border-radius: 0 0 8px 8px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments for smaller screens (e.g., 600px iframe) */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px auto;
+                padding: 0 10px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .section {
+                padding: 15px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .btn {
+                width: 90%;
+                min-width: unset;
+                padding: 10px 15px;
+                font-size: 0.95em;
+            }
+            .call-to-action {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-city"></i> شهرداری، قوانین ساخت و ساز و مسکن</h1>
+            <p>راهنمای جامع قوانین شهری، ساختمانی و ملکی</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2><i class="fas fa-building"></i> آشنایی با شهرداری و مدیریت شهری</h2>
+                <p>شهرداری نهادی عمومی و غیردولتی است که مسئولیت اداره امور محلی شهرها را بر عهده دارد. وظایف شهرداری گسترده و شامل برنامه‌ریزی شهری، نظارت بر ساخت‌وسازها، حفظ فضای سبز، جمع‌آوری زباله، حمل‌ونقل شهری و بسیاری خدمات دیگر است.</p>
+                <p>هدف اصلی شهرداری، ایجاد شهری پویا، زیبا و با کیفیت زندگی بالا برای شهروندان است که از طریق اجرای قوانین و مقررات مرتبط با شهرسازی و مدیریت شهری محقق می‌شود.</p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-map-marked-alt"></i> برنامه‌ریزی و توسعه شهری.</li>
+                    <li><i class="fas fa-road"></i> مدیریت معابر و زیرساخت‌های شهری.</li>
+                    <li><i class="fas fa-tree"></i> حفظ و گسترش فضای سبز.</li>
+                    <li><i class="fas fa-trash-alt"></i> جمع‌آوری و دفع پسماندها.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-hard-hat"></i> قوانین و مقررات ساخت و ساز</h2>
+                <p>قوانین ساخت و ساز، مجموعه ضوابطی هستند که چارچوب قانونی احداث، توسعه، و تغییر کاربری ساختمان‌ها را تعیین می‌کنند. این قوانین از سوی شهرداری و نهادهای بالادستی وضع می‌شوند و رعایت آن‌ها برای حفظ ایمنی، استانداردها و زیبایی شهری الزامی است.</p>
+                <p><strong>برخی از موارد کلیدی:</strong></p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-file-invoice"></i> پروانه ساختمانی: مراحل اخذ و مدارک لازم.</li>
+                    <li><i class="fas fa-ruler-combined"></i> ضوابط شهرسازی: تراکم، سطح اشغال، ارتفاع، کاربری اراضی.</li>
+                    <li><i class="fas fa-hammer"></i> نظارت مهندسی: نقش مهندسین ناظر در انطباق با مقررات ملی ساختمان.</li>
+                    <li><i class="fas fa-clipboard-check"></i> گواهی پایان کار: تأیید نهایی اتمام ساخت و انطباق با پروانه.</li>
+                    <li><i class="fas fa-landmark"></i> کمیسیون ماده 100: رسیدگی به تخلفات ساختمانی.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-home"></i> قوانین مرتبط با مسکن و املاک</h2>
+                <p>حوزه مسکن و املاک، قوانین گسترده‌ای را شامل می‌شود که از خرید و فروش و اجاره تا تغییر کاربری و تفکیک اراضی را پوشش می‌دهد. این قوانین برای ساماندهی بازار مسکن و حفظ حقوق شهروندی تدوین شده‌اند.</p>
+                <p><strong>موضوعات مهم:</strong></p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-handshake"></i> قوانین خرید و فروش و اجاره ملک.</li>
+                    <li><i class="fas fa-id-card"></i> اسناد مالکیت و مراحل ثبتی.</li>
+                    <li><i class="fas fa-house-damage"></i> بازسازی و نوسازی بافت‌های فرسوده.</li>
+                    <li><i class="fas fa-chart-area"></i> تفکیک و تجمیع اراضی.</li>
+                    <li><i class="fas fa-money-bill-alt"></i> عوارض شهرداری و نحوه محاسبه آن.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-gavel"></i> روند رسیدگی به پرونده‌ها در شهرداری</h2>
+                <p>روند رسیدگی به پرونده‌های مرتبط با شهرداری، اعم از درخواست پروانه، رسیدگی به تخلفات یا شکایات، از اهمیت بالایی برخوردار است. آگاهی از این روند می‌تواند به شهروندان در پیگیری سریع‌تر و صحیح‌تر امور خود کمک کند.</p>
+                <p><strong>مراحل اصلی:</strong></p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-file-upload"></i> ثبت درخواست/شکایت در دفاتر خدمات الکترونیک شهر یا شهرداری.</li>
+                    <li><i class="fas fa-eye"></i> کارشناسی و بازدید توسط مأمورین مربوطه.</li>
+                    <li><i class="fas fa-paper-plane"></i> ارجاع به کمیسیون‌های تخصصی (مانند کمیسیون ماده ۱۰۰ برای تخلفات ساختمانی).</li>
+                    <li><i class="fas fa-balance-scale-left"></i> صدور رأی یا ابلاغ نتیجه.</li>
+                    <li><i class="fas fa-university"></i> امکان اعتراض و تجدیدنظر در مراجع بالاتر (مانند دیوان عدالت اداری).</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-cubes"></i> گستردگی حوزه‌های شهرداری</h2>
+                <p>شهرداری تنها به ساخت و ساز محدود نمی‌شود و دامنه‌ی وسیعی از خدمات و قوانین را در بر می‌گیرد که مستقیماً با زندگی روزمره شهروندان مرتبط است. از حفظ محیط زیست تا فرهنگ شهری، همه در حوزه اختیارات و وظایف شهرداری قرار دارند.</p>
+                <ul class="icon-list">
+                    <li><i class="fas fa-bus-alt"></i> قوانین حمل‌ونقل و ترافیک شهری.</li>
+                    <li><i class="fas fa-utensils"></i> ضوابط مربوط به مشاغل و اصناف (پروانه کسب).</li>
+                    <li><i class="fas fa-leaf"></i> محیط زیست شهری و آلودگی هوا و صوتی.</li>
+                    <li><i class="fas fa-monument"></i> میراث فرهنگی و حفظ بافت‌های تاریخی.</li>
+                    <li><i class="fas fa-lightbulb"></i> روشنایی و مبلمان شهری.</li>
+                </ul>
+            </section>
+
+            <section class="section call-to-action">
+                <a href="tel:+9821XXXXXXX" class="btn">
+                    <i class="fas fa-phone-alt"></i> تماس فوری با کارشناس
+                </a>
+                <a href="javascript:void(0);" class="btn" onclick="alert('قابلیت شماره گیری از مشتری در حال حاضر شبیه سازی شده است. لطفا برای تماس با کارشناس از دکمه بالا استفاده کنید.');">
+                    <i class="fas fa-user-circle"></i> شماره‌گیری از مشتری
+                </a>
+            </section>
+
+            <section class="section contact-form">
+                <h2><i class="fas fa-mobile-alt"></i> دریافت شماره تماس مشتری</h2>
+                <p>برای دریافت مشاوره تخصصی در زمینه قوانین شهرداری، ساخت و ساز یا مسکن، شماره تماس خود را وارد کنید.</p>
+                <form onsubmit="event.preventDefault(); alert('شماره شما با موفقیت دریافت شد. به زودی با شما تماس خواهیم گرفت.');">
+                    <label for="customerName"><i class="fas fa-user"></i> نام و نام خانوادگی:</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="نام خود را وارد کنید" required>
+
+                    <label for="customerPhone"><i class="fas fa-phone"></i> شماره تماس:</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" pattern="[0-9]{11}" placeholder="مثال: 09123456789" required>
+                    <small>لطفا شماره موبایل 11 رقمی خود را وارد نمایید.</small>
+                    <br><br>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> ارسال شماره</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 شهرداری و قوانین شهری. تمامی حقوق محفوظ است.</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for basic client-side interactivity.
+        // The "شماره‌گیری از مشتری" button is simulated with an alert.
+        // The form submission is also simulated with an alert.
+        // In a real application, these would involve more complex logic
+        // like making API calls or interacting with a backend system.
+    </script>
+</body>
+</html>
