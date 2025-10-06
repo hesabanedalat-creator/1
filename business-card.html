@@ -1,54 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سامانه جامع تجارت (NTSW) | کارت بازرگانی، ترخیص کالا، قوانین بازرگانی و تامین اجتماعی - مشاوره و خدمات</title>
-    <!-- SEO-friendly description -->
-    <meta name="description" content="مرجع جامع اطلاعات، قوانین و اخذ مجوزهای تجارت الکترونیکی و بازرگانی در ایران. شامل کارت بازرگانی، ترخیص کالا از گمرک، قوانین تامین اجتماعی، و تمامی فیلدهای مجوزهای NTSW با بهینه‌سازی سئو برای دسترسی آسان به هر آنچه در این حوزه است.">
-    <meta name="keywords" content="سامانه جامع تجارت, NTSW, کارت بازرگانی, ترخیص کالا از گمرک, قوانین بازرگانی, تامین اجتماعی, مجوزهای تجاری, واردات, صادرات, ثبت سفارش, مشاوره تجارت, قوانین گمرکی, پروانه صلاحیت, پروانه پیمانکاری, تعزیرات حکومتی, قوانین ایران">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>راهنمای جامع کارت بازرگانی و ترخیص کالا</title>
     <style>
+        :root {
+            --primary-color: #0056b3; /* آبی تیره */
+            --secondary-color: #f8f9fa; /* خاکستری روشن */
+            --text-color: #333;
+            --border-color: #ccc;
+        }
         body {
             font-family: 'Tahoma', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            overflow-y: auto; /* Enable vertical scroll for content */
         }
         .container {
-            max-width: 580px; /* Adjusted for 600px iframe with some padding */
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            box-sizing: border-box; /* Ensures padding is included in the width */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
         header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 8px 8px 0 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
             text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 1.8em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 2.5em;
         }
-        header h1 i {
-            margin-left: 10px;
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .section {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .step-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .step-list li {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            position: relative;
+            padding-right: 40px;
+        }
+        .step-list li::before {
+            content: "→";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            right: 15px;
+            top: 15px;
             font-size: 1.2em;
         }
-        section {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
+        .icon-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: space-around;
         }
-        section:last-of-type {
-            border-bottom:
+        .icon-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            flex: 1 1 200px;
+            min-width: 180px;
+        }
+        .icon {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .contact-info {
+            background: #e9ecef;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: #28a745; /* رنگ سبز برای تماس */
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0 15px;
+            display: inline-block;
+        }
+        .contact-info .icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        .card-graphic {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px dashed var(--primary-color);
+            border-radius: 10px;
+            background-color: #e7f3ff;
+        }
+        .card-graphic img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرجع جامع کارت بازرگانی و ترخیص کالا</h1>
+        <p>آخرین قوانین، سامانه‌ها و روندهای اجرایی</p>
+    </header>
+
+    <div class="container">
+
+        <!-- بخش 1: کارت بازرگانی -->
+        <div class="section">
+            <h2>۱. کارت بازرگانی (حقیقی و حقوقی)</h2>
+            
+            <div class="card-graphic">
+                <h3>گرافیک نمونه کارت بازرگانی</h3>
+                <p>تصویر گرافیکی کارت بازرگانی (به جای تصویر واقعی، یک طرح شماتیک در نظر گرفته شده است)</p>
+                <!-- در اینجا اگر URL تصویر گرافیکی کارت بازرگانی موجود بود، قرار می‌گرفت -->
+                <!-- مثال: <img src="URL_IMAGE_CARD" alt="طرح شماتیک کارت بازرگانی"> -->
+                <p style="font-style: italic; color: #666;">(تصویر شماتیک کارت بازرگانی با فیلدهای: شماره سریال، نام دارنده، نوع کارت، تاریخ اعتبار)</p>
+            </div>
+
+            <h3>روند صدور کارت بازرگانی</h3>
+            <ul class="step-list">
+                <li>تکمیل و ارائه مدارک هویتی و ثبتی (اشخاص حقیقی و حقوقی).</li>
+                <li>ثبت‌نام در سامانه جامع تجارت (NTSW).</li>
+                <li>بررسی سوابق توسط اتاق بازرگانی و وزارت صمت.</li>
+                <li>اخذ گواهی عدم سوء پیشینه.</li>
+                <li>پرداخت هزینه‌های قانونی و صدور نهایی کارت.</li>
+                <li>**قوانین مهم:** بررسی محدودیت‌ها برای مشاغل خاص، سقف ارزش کارت، و الزامات خوش‌حسابی مالیاتی.</li>
+            </ul>
+            
+            <h3>سامانه‌های مرتبط</h3>
+            <p>مهمترین سامانه‌ها شامل: سامانه جامع تجارت (NTSW)، سامانه جامع امور گمرکی (EPL)، و سامانه مودیان.</p>
+        </div>
+
+        <!-- بخش 2: ترخیص کالا -->
+        <div class="section">
+            <h2>۲. مراحل و مجوزهای ترخیص کالا از گمرکات کشور</h2>
+            
+            <h3>فرایند ترخیص کالا (از بندر تا انبار)</h3>
+            <ul class="step-list">
+                <li>اخذ مجوزهای پیش از اظهار (در صورت نیاز به استاندارد، بهداشت، انرژی اتمی و...).</li>
+                <li>ثبت اظهارنامه در سامانه EPL و تعیین مسیر (سبز، زرد، قرمز).</li>
+                <li>ارائه اسناد مالکیت (پروانه، فاکتور، لیست عدل‌بندی، گواهی مبدأ).</li>
+                <li>انجام تشریفات گمرکی و بازرسی فیزیکی (در صورت لزوم).</li>
+                <li>پرداخت حقوق ورودی، عوارض و مالیات.</li>
+                <li>تأیید نهایی و صدور مجوز خروج از گمرک.</li>
+            </ul>
+
+            <h3>مجوزهای کلیدی ترخیص</h3>
+            <p>انواع مجوزهای مورد نیاز بسته به نوع کالا:</p>
+            <ul style="list-style-type: disc; padding-right: 20px;">
+                <li>مجوز استاندارد اجباری (برای کالاهای مشمول).</li>
+                <li>مجوز بهداشت/دارو (برای مواد غذایی، دارویی، آرایشی).</li>
+                <li>مجوز انرژی اتمی یا جهاد کشاورزی (بسته به نوع کالا).</li>
+                <li>مجوزهای خاص سازمان صنعت، معدن و تجارت (صمت).</li>
+            </ul>
+            
+            <h3>مکان‌های عملیاتی</h3>
+            <p>کلیه فرآیندها در مرزهای زمینی، بنادر تجاری (مانند شهید رجایی، امام خمینی)، و فرودگاه‌های بین‌المللی قابل اجرا است.</p>
+        </div>
+
+        <!-- بخش 3: آیکون‌ها و تماس با ما -->
+        <div class="section">
+            <h2>۳. ارتباط فوری با کارشناسان</h2>
+            <p>ما آماده ارائه مشاوره تخصصی و انجام خدمات بازرگانی شما هستیم.</p>
+            
+            <div class="icon-box">
+                
+                <div class="icon-item">
+                    <span class="icon" title="گرفتن شماره تماس مشتری">📞</span>
+                    <p>گرفتن شماره تماس مشتری</p>
+                </div>
+
+                <div class="icon-item">
+                    <span class="icon" title="شماره گیری از مشتری">📱</span>
+                    <p>شماره گیری از مشتری</p>
+                </div>
+                
+                <div class="icon-item">
+                    <span class="icon" title="تماس فوری با کارشناس">⚡</span>
+                    <p>تماس فوری با کارشناس</p>
+                </div>
+
+                <div class="icon-item">
+                    <span class="icon" title="مشاوره تخصصی">💡</span>
+                    <p>مشاوره تخصصی</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h4>راه‌های ارتباطی مستقیم</h4>
+                <p>برای مشاوره سریع و دریافت راهنمایی:</p>
+                
+                <!-- شماره تلفن -->
+                <p>
+                    <span class="icon" style="color: #007bff;">☎️</span> 
+                    تلفن ثابت شرکت: <a href="tel:+9821xxxxxxx" style="color: #007bff;">021-XXXXXXX</a>
+                </p>
+
+                <!-- شماره واتساپ -->
+                <p>
+                    <span class="icon" style="color: #28a745;">🟢</span> 
+                    واتساپ کارشناس: <a href="https://wa.me/98912xxxxxxx" target="_blank" style="color: #28a745;">0912-XXXXXXX</a>
+                </p>
+                
+                <!-- فرم تماس (مثال برای نشان دادن ساختار) -->
+                <h4 style="margin-top: 20px;">ارسال درخواست مشاوره</h4>
+                <form action="#" method="POST" style="max-width: 400px; margin: 0 auto;">
+                    <input type="text" name="name" placeholder="نام شما" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid var(--border-color); border-radius: 4px;">
+                    <input type="tel" name="phone" placeholder="شماره تماس (الزامی)" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid var(--border-color); border-radius: 4px;">
+                    <textarea name="message" rows="4" placeholder="شرح مختصر درخواست شما" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 4px;"></textarea>
+                    <button type="submit" style="background-color: var(--primary-color); color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ارسال درخواست</button>
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background-color: #343a40; color: white; margin-top: 40px;">
+        <p>&copy; 2025 - طراحی و توسعه توسط نماینده خدمات بازرگانی. کلیه حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
