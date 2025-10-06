@@ -210,15 +210,37 @@
     <footer class="main-footer">
         <div class="footer-container">
                
-            <!-- =========================================== -->
+    <!-- =========================================== -->
 <!-- بخش دریافت درخواست و شماره موبایل (قبل از نقشه گوگل) -->
 <!-- =========================================== -->
 <section id="contact-form-section" style="text-align: center; padding: 40px 20px; background-color: #f9f9f9; border-top: 2px solid #ddd;">
     <h2 style="color: #333; margin-bottom: 25px;">دریافت درخواست مشاوره یا تماس</h2>
-    <p style="color: #666; margin-bottom: 30px;">لطفاً اطلاعات خود را وارد نمایید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند.</p>
+    <p style="color: #666; margin-bottom: 30px;">لطفاً حوزه مورد نظر و اطلاعات خود را وارد نمایید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند.</p>
     
     <form action="[URL_ACTION_FORM_YOUR_SERVER]" method="POST" style="max-width: 500px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
         
+        <!-- فیلد انتخاب حوزه (منوی کشویی) -->
+        <div style="margin-bottom: 20px; text-align: right;">
+            <label for="area" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">حوزه تخصصی مورد نظر:</label>
+            <select id="area" name="area" required 
+                    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; appearance: none; -webkit-appearance: none; -moz-appearance: none; background-color: #fff;">
+                <option value="">-- یک گزینه را انتخاب کنید --</option>
+                <option value="امورمالیاتی">امور مالیاتی</option>
+                <option value="حقوق_خصوصی">حقوق خصوصی</option>
+                <option value="حقوق_کیفری">حقوق کیفری</option>
+                <option value="حقوق_خانواده">حقوق خانواده</option>
+                <option value="تعزیرات">تعزیرات</option>
+                <option value="مجوزهای_صنعتی_و_معدنی">مجوزهای صنعتی و معدنی</option>
+                <option value="گواهینامه_صلاحیت_پیمانکاری">گواهینامه صلاحیت پیمانکاری</option>
+                <option value="گواهینامه_رتبه_ایمنی">گواهینامه‌های رتبه‌بندی ایمنی</option>
+                <option value="سامانه_جامع_تجارت">سامانه جامع تجارت</option>
+                <option value="کارت_بازرگانی">کارت بازرگانی</option>
+                <option value="ترخیص_کالا">ترخیص کالا</option>
+                <option value="امور_قراردادها">امور قراردادها</option>
+                <option value="رابطه_کارگر_و_کارفرما">رابطه کارگر و کارفرما</option>
+            </select>
+        </div>
+
         <!-- فیلد نام -->
         <div style="margin-bottom: 20px; text-align: right;">
             <label for="name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">نام کامل:</label>
@@ -242,6 +264,12 @@
     </form>
     
     <p style="margin-top: 20px; font-size: 0.9em; color: #999;">ما به حریم خصوصی شما احترام می‌گذاریم.</p>
+
+</section>
+<!-- =========================================== -->
+<!-- پایان بخش دریافت درخواست -->
+<!-- =========================================== -->
+
 
 </section>
 <!-- =========================================== -->
@@ -290,6 +318,7 @@
 
 </body>
 </html>
+
 
 
 
